@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -11,7 +11,6 @@
     <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
 
     <style type="text/css">
-
         .topbar {
             width: 100%;
             position: fixed;
@@ -125,25 +124,25 @@
         }
 
         .lightblock {
+            margin-top: 0.5rem;
             background-color: #FFFFFF;
             margin-bottom: 0.1rem;
         }
 
         .lightblockimg {
-            height: 2rem;
+            height: 3rem;
             line-height: 3rem;
         }
 
         .lightblockspan {
-            height: 1rem;
-            font-size: 0.5rem;
+            font-size: 0.8rem;
         }
 
         .lightblock img {
             width: auto;
             height: auto;
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 70%;
+            max-height: 70%;
             vertical-align: middle;
         }
 
@@ -160,25 +159,6 @@
 
         .lightblock tr {
             height: 3rem;
-        }
-
-        .block {
-            background-color: #fafafa;
-            margin-top: 0.5rem;
-            padding: 0.2rem;
-        }
-
-        .block:after {
-            content: "";
-            clear: both;
-            display: block;
-        }
-
-        .blocktitle {
-            text-align: center;
-            color: #666666;
-            font-size: 0.8rem;
-            margin-bottom: 0.2rem;
         }
 
         .goods {
@@ -220,8 +200,9 @@
         }
 
         .hotsaleprice {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             color: #f55c19;
+            line-height: 1.8rem;
         }
 
         #morehotsale {
@@ -235,6 +216,164 @@
             color: #898989;
         }
 
+        .addtocart_img {
+            float: right;
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: 0.2rem 0.5rem;
+        }
+
+        .widebox {
+            width: 65%;
+            margin-left: 1%;
+            margin-top: 0.2rem;
+            background-color: #eee;
+            display: inline-block;
+            float: left;
+        }
+
+        .narrowbox {
+            width: 32%;
+            margin-left: 1%;
+            margin-top: 0.2rem;
+            background-color: #eee;
+            display: inline-block;
+            float: left;
+        }
+
+        .goods_in2 {
+            background-color: #fff;
+            display: inline-block;
+            width: 47%;
+            float: left;
+            margin-top: 0.2rem;
+            margin-left: 2%;
+        }
+
+        .addtocart {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 11;
+        }
+
+        .a2c_details {
+            background-color: #fff;
+            height: 85%;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .a2c_top {
+            height: 9rem;
+            padding: 0.5rem;
+            display: flex;
+            border-bottom: 1px #f3f3f3 solid;
+        }
+
+        .a2c_img {
+            height: 6rem;
+            width: 6rem;
+            margin-right: 0.5rem;
+        }
+
+        .a2c_title_nso {
+            flex-grow: 1;
+        }
+
+        .a2c_title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+            height: 3rem;
+        }
+
+        .a2c_model {
+            font-size: 0.8rem;
+            color: #999;
+            height: 1rem;
+        }
+
+        .a2c_salenumber {
+            color: #000;
+        }
+
+        .a2c_price {
+            color: #f55e0d;
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .a2c_salenumber {
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.8rem;
+            float: right;
+            color: #9f9f9f;
+        }
+
+        .selectionblock {
+            width: 100%;
+            margin-top: 0.5rem;
+            border-bottom: 1px #f3f3f3 solid;
+        }
+
+        .selectionblock:after {
+            content: '';
+            clear: both;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+
+        .option_title {
+            color: #434343;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .option {
+            background-color: #f3f3f3;
+            display: inline-block;
+            width: 46%;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0.5rem 0 0 2%;
+            float: left;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #444;
+            border: 1px #f3f3f3 solid;
+        }
+
+        .option_selected {
+            border: 1px #f0810e solid;
+            color: #f38200;
+            background-color: #fff;
+        }
+
+        .a2c_middle {
+            flex-grow: 1;
+            overflow: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .a2c_bottom {
+            position: fixed;
+            bottom: 0;
+            left:0;
+            width: 100%;
+            height:3rem;
+            line-height: 3rem;
+            background-color: #fff;
+            border-top: 1px #f3f3f3 solid;
+        }
 
     </style>
 
@@ -281,6 +420,8 @@
             topBar.left_pic_directory = "IMG/search_bar/class_black.png";
             topBar.right_pic_directory = "IMG/search_bar/cs_black.png";
             topBar.topbar_style = "background-color: rgba(255, 255, 255, " + (0.3 + top * 0.6 / 100) + ")";
+        } else {
+            topBar.topbar_style = "background-color: rgba(255, 255, 255, 0.9)";
         }
 
     }
@@ -330,7 +471,7 @@
 <div class="hotline">
     <table style="border-collapse: collapse;height: 2rem;">
         <tr>
-            <td><span class="hotlinetitle">灯饰头条</span></td>
+            <td><span class="hotlinetitle">品豪头条</span></td>
             <td><a href="#" class="hotlinecomment">热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开</a>
             </td>
         </tr>
@@ -432,7 +573,7 @@
             <td>
                 <a href="#">
                     <div class="lightblockimg">
-                        <img style="max-width: " src="./IMG/light/1-more.png">
+                        <img style="max-width: 50%; max-height: 50%;" src="./IMG/light/1-more.png">
                     </div>
                     <div class="lightblockspan">
                         <span>更多</span>
@@ -448,72 +589,74 @@
     var imgBox = document.getElementsByClassName('lightblockimg');
     for (var i = 0; i < imgBox.length; i++) {
         imgBox[i].style.height = imgBox[i].offsetWidth + "px";
+        imgBox[i].style.lineHeight = imgBox[i].offsetWidth + "px";
     }
 
 </script>
 
-<div id="hotsale" class="block">
+<div class="block">
     <div class="blocktitle">———— 热销排行榜 ————</div>
-    <div style="width: 100%;white-space: nowrap; overflow: auto;">
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+    <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
+        <div class="goods" onclick="goodsDetails(1)">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow0.jpg'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img onclick="addToCart(1)" src="./IMG/recommend/cart.png"
+                                                class="addtocart_img"></div>
         </div>
         <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img1.jpg'></div>
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow1.jpg'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img2.png'></div>
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow2.jpg'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img4.png'></div>
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow3.jpg'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div class="goods">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
         </div>
         <div id="morehotsale">
             <div>
@@ -533,6 +676,235 @@
     }
     moreHotSale.style.height = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
     moreHotSale.style.lineHeight = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
+
+    function goodsDetails(id) {
+
+    }
+
+    function addToCart(id) {
+
+    }
+
+</script>
+
+<div class="block">
+    <div class="blocktitle">
+        ———— 精挑细选 ————
+        <div>
+            <div class="widebox">
+                <img onclick="goodsDetails(1)" class="full_img" src="IMG/light/2-wide0.jpg">
+            </div>
+            <div class="narrowbox">
+                <img onclick="goodsDetails(1)" class="full_img" src="IMG/light/2-narrow0.jpg">
+            </div>
+            <div class="narrowbox">
+                <img onclick="goodsDetails(1)" class="full_img" src="IMG/light/2-narrow1.jpg">
+            </div>
+            <div class="narrowbox">
+                <img onclick="goodsDetails(1)" class="full_img" src="IMG/light/2-narrow2.jpg">
+            </div>
+            <div class="narrowbox">
+                <img onclick="goodsDetails(1)" class="full_img" src="IMG/light/2-narrow3.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var wideBoxs = document.getElementsByClassName('widebox');
+    var narrowBoxs = document.getElementsByClassName('narrowbox');
+    for (var i = 0; i < wideBoxs.length; i++) {
+        wideBoxs[i].style.height = 0.3 * deviceWidth + 'px';
+    }
+    for (var i = 0; i < narrowBoxs.length; i++) {
+        narrowBoxs[i].style.height = 0.3 * deviceWidth + 'px';
+    }
+
+</script>
+
+<div class="block" id="maylike">
+    <div class="blocktitle">
+        ———— 你可能喜欢 ————
+    </div>
+
+    <div class="goods_in2" v-for="item in items" onclick="goodsDetails()" :goodsid="item.id">
+        <div class="hotsalepicture"><img class='hotsale_img' :src='item.picDir'></div>
+        <div class='hotsaletitle'>{{item.title}}</div>
+        <div class='hotsaledetail'>{{item.detail}}</div>
+        <div class='hotsaleprice'>
+            ¥{{item.price}}
+            <img onclick="addToCart()" src="./IMG/recommend/cart.png"
+                 class="addtocart_img">
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+
+    var mayLike = new Vue({
+        el: '#maylike',
+        data: {
+            items: [
+                {
+                    id: 1,
+                    picDir: 'IMG/light/2-narrow0.jpg',
+                    title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                    details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                    price: 1000
+                },
+                {
+                    id: 2,
+                    picDir: 'IMG/light/2-narrow1.jpg',
+                    title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                    details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                    price: 1111
+                },
+                {
+                    id: 3,
+                    picDir: 'IMG/light/2-narrow2.jpg',
+                    title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                    details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                    price: 8888
+                },
+                {
+                    id: 4,
+                    picDir: 'IMG/light/2-narrow3.jpg',
+                    title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                    details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                    price: 1688,
+                }
+            ]
+        }
+    });
+
+    var oldOnscroll = window.onscroll;
+    window.onscroll = function () {
+        oldOnscroll();
+        if ((document.documentElement.scrollTop || document.body.scrollTop) + window.screen.availHeight == document.body.scrollHeight) {
+            console.log("已经到底啦");
+            document.getElementById('loading').hidden = false;
+            setTimeout(function () {
+                mayLike.items.push(
+                    {
+                        id: 1,
+                        picDir: 'IMG/light/2-narrow0.jpg',
+                        title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                        details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                        price: 1000
+                    },
+                    {
+                        id: 2,
+                        picDir: 'IMG/light/2-narrow1.jpg',
+                        title: '满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声',
+                        details: '原标题：满怀激动和喜悦之情，上海各界热烈庆贺十九大召开谈体会表心声—— 不忘初心牢记使命，站上新起点',
+                        price: 1111
+                    }
+                );
+                document.getElementById('loading').hidden = false;
+            }, 2000)
+        }
+
+
+    }
+
+</script>
+
+<div class="block" id="loading" hidden>
+    <div class="blocktitle">
+        正在加载更多……
+    </div>
+</div>
+
+<div class="addtocart" id="addtocart" hidden>
+    <div style="height: 15%"></div>
+    <div class="a2c_details">
+        <div class="a2c_top">
+            <img class="a2c_img" src="./IMG/light/2-narrow0.jpg">
+            <div class="a2c_title_nso">
+                <div class="a2c_title">
+                    {{title}}
+                </div>
+                <div class="a2c_model">
+                    型号:{{model}}
+                </div>
+                <div class="a2c_price_nso"><span class="a2c_price">¥{{price}}</span><span
+                        class="a2c_salenumber">销量:{{saleNumber}}</span></div>
+            </div>
+        </div>
+        <div class="a2c_middle">
+            <div class="selectionblock" v-for="(selection,index1) in selections">
+                <div class="option_title">{{selection.title}}</div>
+                <div class="option" v-for="(opt,index2) in selection.option"
+                     :class="{option_selected: opt.option_selected}"
+                     @click="selectOption(index1, index2)">{{opt.name}}
+                </div>
+            </div>
+            <div class="placeholder"></div>
+        </div>
+        <div class="a2c_bottom">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var addToCart = new Vue({
+        el: "#addtocart",
+        data: {
+            title: "女孩因没见到偶像急哭 Angelababy降临安慰合照 女孩因没见到偶像急哭 Angelababy降临安慰合照 女孩因没见到偶像急哭 Angelababy降临安慰合照",
+            model: "Subaru BRZ",
+            price: "666",
+            saleNumber: '1688',
+            selections: [
+                {
+                    title: '选择1',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择2',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择3',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择4',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                }
+            ]
+        },
+        methods: {
+            selectOption: function (indexSelection, indexOption) {
+                for (var i = 0; i < this.selections[indexSelection].option.length; i++) {
+                    this.selections[indexSelection].option[i].option_selected = false;
+                }
+                this.selections[indexSelection].option[indexOption].option_selected = true;
+            }
+        }
+    })
 
 </script>
 

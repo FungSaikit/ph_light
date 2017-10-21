@@ -24,5 +24,29 @@ table {
 .placeholder {
     display: block;
     height: 3rem;
+    width: 100%;
 }
 
+.full_img {
+    width: 100%;
+    height: 100%;
+}
+
+.block {
+    background-color: #fafafa;
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+}
+
+.block:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.blocktitle {
+    text-align: center;
+    color: #666666;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
