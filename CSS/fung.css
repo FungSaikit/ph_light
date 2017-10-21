@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+}
+
+button {
+    outline: none;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #000;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.placeholder {
+    display: block;
+    height: 3rem;
+}
+

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>品豪</title>
+    <link rel="stylesheet" href="./CSS/fung.css">
+    <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
+    <script type="text/javascript" src="./JavaScript/vue.js"></script>
+    <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
+
+    <style type="text/css">
+
+        .topbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            z-index: 10;
+            display: inline-flex;
+            background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
+        }
+
+        .topbar_change {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            z-index: 10;
+            display: inline-flex;
+        }
+
+        .topbarbutton {
+            width: 1.8rem;
+            height: 1.8rem;
+            margin: 0.35rem 0.2rem;
+        }
+
+        .middlebox {
+            flex-grow: 1;
+            display: inline-flex;
+            height: 1.8rem;
+            margin: 0.35rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 0.9rem;
+            border: 1px lightgray solid;
+        }
+
+        .search_img {
+            height: 1.2rem;
+            margin: 0.3rem 0 0.3rem 0.5rem;
+        }
+
+        .search_input {
+            flex-grow: 1;
+            height: 1.2rem;
+            margin: 0.3rem;
+            border: 0;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .search_button {
+            height: 1.2rem;
+            width: 3rem;
+            margin: 0.3rem auto;
+            font-size: 0.8rem;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+            border-left: 1px darkgray solid;
+        }
+
+        .swiper-container {
+            height: 6rem;
+            width: 100%;
+        }
+
+        .swiper-wrapper {
+            text-align: center;
+            font-size: 0;
+        }
+
+        .swiper_img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            line-height: 100%;
+            vertical-align: middle;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #f38200;
+        }
+
+        .hotline {
+            background-color: #fff;
+            display: block;
+        }
+
+        .hotlinetitle {
+            display: inline-block;
+            flex-grow: 1;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0 0.2rem;
+            color: #ee7a00;
+            font-size: 0.9rem;
+            width: 4rem;
+        }
+
+        .hotlinecomment {
+            display: inline-block;
+            font-size: 0.8rem;
+            height: 2rem;
+            line-height: 2rem;
+            vertical-align: middle;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #656565;
+            text-decoration: none;
+        }
+
+        .lightblock {
+            background-color: #FFFFFF;
+            margin-bottom: 0.1rem;
+        }
+
+        .lightblockimg {
+            height: 2rem;
+            line-height: 3rem;
+        }
+
+        .lightblockspan {
+            height: 1rem;
+            font-size: 0.5rem;
+        }
+
+        .lightblock img {
+            width: auto;
+            height: auto;
+            max-width: 80%;
+            max-height: 80%;
+            vertical-align: middle;
+        }
+
+        .lightblock table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .lightblock td {
+            border: 1px #e6e6e6 solid;
+            width: 20%;
+        }
+
+        .lightblock tr {
+            height: 3rem;
+        }
+
+        .block {
+            background-color: #fafafa;
+            margin-top: 0.5rem;
+            padding: 0.2rem;
+        }
+
+        .block:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .blocktitle {
+            text-align: center;
+            color: #666666;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .goods {
+            background-color: #fff;
+            padding: 0.2rem;
+            display: inline-block;
+            width: 35%;
+        }
+
+        .hotsale_img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+        .hotsalepicture {
+            text-align: center;
+        }
+
+        .hotsaletitle {
+            font-size: 0.8rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+            white-space: normal;
+        }
+
+        .hotsaledetail {
+            font-size: 0.6rem;
+            color: #898989;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .hotsaleprice {
+            font-size: 0.8rem;
+            color: #f55c19;
+        }
+
+        #morehotsale {
+            display: inline-block;
+            height: 100%;
+            line-height: 100%;
+            text-align: center;
+            vertical-align: top;
+            background-color: #fff;
+            padding: 0.2rem;
+            color: #898989;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div :class="topbar_class" id="topbar" :style="topbar_style">
+    <img :src="left_pic_directory" class="topbarbutton">
+    <div class="middlebox">
+        <img :src="search_directory" class="search_img">
+        <input type="text" class="search_input" placeholder="实时热搜:你今日饮左未？" v-model="keyword">
+        <button class="search_button" @click="search">搜索</button>
+    </div>
+    <img :src="right_pic_directory" class="topbarbutton">
+</div>
+<script type="text/javascript">
+
+    var topBar = new Vue({
+        el: '#topbar',
+        data: {
+            topbar_class: "topbar",
+            left_pic_directory: "IMG/search_bar/class_white.png",
+            right_pic_directory: "IMG/search_bar/cs_white.png",
+            search_directory: "IMG/search_bar/search_black.png",
+            keyword: "",
+            topbar_style: "background-color: rgba(255, 255, 255, 0)"
+        },
+        methods: {
+            search: function () {
+                alert('搜索关键词为' + this.keyword);
+            }
+        }
+    })
+
+    window.onscroll = function () {
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        if (top <= 0) {
+            topBar.topbar_class = "topbar";
+            topBar.left_pic_directory = "IMG/search_bar/class_white.png";
+            topBar.right_pic_directory = "IMG/search_bar/cs_white.png";
+            topBar.topbar_style = "background-color: rgba(255, 255, 255, 0)";
+        } else if (top > 0 && top < 100) {
+            topBar.topbar_class = "topbar_change";
+            topBar.left_pic_directory = "IMG/search_bar/class_black.png";
+            topBar.right_pic_directory = "IMG/search_bar/cs_black.png";
+            topBar.topbar_style = "background-color: rgba(255, 255, 255, " + (0.3 + top * 0.6 / 100) + ")";
+        }
+
+    }
+
+</script>
+
+<div class="swiper-container" id="swiperbox">
+    <div class="swiper-wrapper">
+        <a class="swiper-slide" v-for="(pic, index) in pictures" :src="pic.link">
+            <img class="swiper_img" :src="pic.directory" :alt="index">
+        </a>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script type="text/javascript">
+
+    var deviceWidth = window.screen.width;
+    var swiper = document.getElementById('swiperbox');
+    swiper.style.height = deviceWidth * 5 / 9 + 'px';
+    document.getElementsByClassName('swiper-wrapper')[0].style.lineHeight = deviceWidth * 5 / 9 + 'px';
+
+    var swiperbox = new Vue({
+        el: '#swiperbox',
+        data: {
+            pictures: [
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img1.jpg"},
+                {link: '#', directory: "IMG/play_list/img2.png"}
+            ]
+        }
+    });
+
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        autoplay: 3000,
+        loop: true,
+        autoplayDisableOnInteraction: false
+    });
+
+</script>
+
+<div class="hotline">
+    <table style="border-collapse: collapse;height: 2rem;">
+        <tr>
+            <td><span class="hotlinetitle">灯饰头条</span></td>
+            <td><a href="#" class="hotlinecomment">热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+
+    document.getElementsByClassName('hotlinecomment')[0].style.width = deviceWidth - document.getElementsByClassName("hotlinetitle")[0].parentNode.clientWidth + 'px';
+
+</script>
+
+<div class="lightblock">
+    <table>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/0-pendant.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>吊灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="./IMG/light/0-ceiling.png"></div>
+                    <div class="lightblockspan"><span>吸顶灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="./IMG/light/0-wall.png"></div>
+                    <div class="lightblockspan"><span>壁灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/0-tablelamp.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>台灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/0-auxiliary.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>辅灯</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/1-cupric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铜灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/1-ferric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铁艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/1-wooden.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>木艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="./IMG/light/1-zincic.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>锌合金</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img style="max-width: " src="./IMG/light/1-more.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>更多</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    var imgBox = document.getElementsByClassName('lightblockimg');
+    for (var i = 0; i < imgBox.length; i++) {
+        imgBox[i].style.height = imgBox[i].offsetWidth + "px";
+    }
+
+</script>
+
+<div id="hotsale" class="block">
+    <div class="blocktitle">———— 热销排行榜 ————</div>
+    <div style="width: 100%;white-space: nowrap; overflow: auto;">
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img1.jpg'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img2.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img4.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div class="goods">
+            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
+            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
+            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
+            <div class='hotsaleprice'>¥1000</div>
+        </div>
+        <div id="morehotsale">
+            <div>
+                <img style="width: 2rem; height: 2rem; vertical-align: middle;" src="./IMG/hot_sale/hotsale.png">
+                <span style="vertical-align: middle;">发现更多</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var pic = document.getElementsByClassName('hotsalepicture');
+    var moreHotSale = document.getElementById('morehotsale');
+    for (var i = 0; i < pic.length; i++) {
+        pic[i].style.height = pic[i].clientWidth + 'px';
+        pic[i].style.lineHeight = pic[i].clientWidth + 'px';
+    }
+    moreHotSale.style.height = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
+    moreHotSale.style.lineHeight = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
+
+</script>
+
+</body>
+
+
+</html>
