@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>为佐照明</title>
+    <script type="text/javascript" src="./JavaScript/vue.js"></script>
+    <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
+    <link rel="stylesheet" href="./CSS/fung.css">
+    <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
+    <style type="text/css">
+
+        .header {
+            height: 3rem;
+            line-height: 3rem;
+            width: 100%;
+            display: flex;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .header img {
+            height: 1.2rem;
+            width: 1.2rem;
+            margin: auto 1rem;
+        }
+
+        .mid_button {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .topbaroption {
+            display: inline-block;
+            height: 2.8rem;
+            width: 3rem;
+            border-bottom: 0.2rem #fff solid;
+        }
+
+        .block {
+            margin: 0;
+            padding: 0;
+        }
+
+        .topbaroption_selected {
+            color: #f28f29;
+            border-bottom-color: #f28f29;
+        }
+
+        .swiper-container {
+            height: 6rem;
+            width: 100%;
+        }
+
+        .swiper-wrapper {
+            text-align: center;
+            font-size: 0;
+        }
+
+        .swiper-slide {
+            font-size: 0;
+        }
+
+        .swiper_img {
+            /*width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            line-height: 100%;*/
+            width: 100%;
+            height: 100%;
+
+            vertical-align: middle;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #f38200;
+        }
+
+        .detailsbox {
+            padding: 0.5rem;
+        }
+
+        .title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+        }
+
+        .details {
+            font-size: 0.8rem;
+            color: gray;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+        }
+
+        .price_nso {
+            color: #f55f0a;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header" id="topbar">
+    <img src="./IMG/details/back.png" alt="返回" onclick="history.go(-1)">
+    <div class="mid_button">
+        <div class="topbaroption" :class="{topbaroption_selected: selected[0]}" @click="selectThis(0)">商品</div>
+        <div class="topbaroption" :class="{topbaroption_selected: selected[1]}" @click="selectThis(1)">参数</div>
+        <div class="topbaroption" :class="{topbaroption_selected: selected[2]}" @click="selectThis(2)">详情</div>
+    </div>
+    <img src="./IMG/details/cart.png" alt="购物车">
+</div>
+
+<div class="placeholder"></div>
+
+<div class="block" id="page1">
+    <div class="swiper-container" id="swiperbox">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" href="#">
+                <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+            </a>
+            <a class="swiper-slide" href="#">
+                <img class="swiper_img" src="./IMG/play_list/img2.png">
+            </a>
+            <a class="swiper-slide" href="#">
+                <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+            </a>
+            <a class="swiper-slide" href="#">
+                <img class="swiper_img" src="./IMG/play_list/img3.png">
+            </a>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="detailsbox">
+        <div class="title">欧普照明（OPPLE） LED吸顶灯具大客厅灯 手机+遥控双智能调光调色现代简约长方形灯饰 97*68cm120瓦适25-35平送遥控器</div>
+        <div class="details">功率:新款120瓦（老款105瓦，新老款随机发货）新款120瓦（老款105瓦，新老款随机发货）新款120瓦（老款105瓦，新老款随机发货）</div>
+        <div class="price_nso">¥ 1688 <span style="float: right; font-size: 0.8rem; color: gray;">销量：168</span></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var mainImgDiv = document.getElementById('swiperbox');
+    mainImgDiv.style.height = mainImgDiv.offsetWidth + 'px';
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination'
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    var topBar = new Vue({
+        el: '#topbar',
+        data: {
+            selected: [
+                true,
+                false,
+                false
+            ]
+        },
+        methods: {
+            selectThis: function (num) {
+                console.log(num);
+                for (var i = 0; i < this.selected.length; i++) {
+                    this.selected[i] = (num == i);
+                }
+                this.selected.push(0);
+                this.selected.pop();
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

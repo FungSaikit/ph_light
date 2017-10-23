@@ -4,13 +4,18 @@
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>品豪</title>
+    <title>为佐照明</title>
     <link rel="stylesheet" href="./CSS/fung.css">
     <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
     <script type="text/javascript" src="./JavaScript/vue.js"></script>
     <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
 
     <style type="text/css">
+
+        body {
+            height: 100%;
+        }
+
         .topbar {
             width: 100%;
             position: fixed;
@@ -266,6 +271,7 @@
             padding: 0.5rem;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .a2c_top {
@@ -367,12 +373,67 @@
         .a2c_bottom {
             position: fixed;
             bottom: 0;
-            left:0;
+            left: 0;
             width: 100%;
-            height:3rem;
+            height: 3rem;
             line-height: 3rem;
             background-color: #fff;
             border-top: 1px #f3f3f3 solid;
+        }
+
+        .a2c_right {
+            display: inline-block;
+            background-color: #f28f29;
+            height: 100%;
+            width: 8rem;
+            text-align: center;
+            color: #fff;
+            float: right;
+        }
+
+        .a2c_left {
+            display: inline-block;
+        }
+
+        .a2c_left td {
+            border-left: 1px #f3f3f3 solid;
+            border-right: 1px #f3f3f3 solid;
+        }
+
+        .waiting_span {
+            display: inline-block;
+            text-align: center;
+            width: 10rem;
+            height: 2rem;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 0.8rem;
+            color: gray;
+        }
+
+        #number_input {
+            font-size: 1rem;
+            height: 2rem;
+            text-align: center;
+            width: 4rem;
+            border: 0;
+        }
+
+        .closecart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            padding: 0.2rem;
+        }
+
+        .swiper-container {
+            width: 100%;
         }
 
     </style>
@@ -390,6 +451,8 @@
     <img :src="right_pic_directory" class="topbarbutton">
 </div>
 <script type="text/javascript">
+
+    var body = document.getElementsByTagName('body')[0];
 
     var topBar = new Vue({
         el: '#topbar',
@@ -430,33 +493,40 @@
 
 <div class="swiper-container" id="swiperbox">
     <div class="swiper-wrapper">
-        <a class="swiper-slide" v-for="(pic, index) in pictures" :src="pic.link">
-            <img class="swiper_img" :src="pic.directory" :alt="index">
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img2.png">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img3.png">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img4.png">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img1.jpg">
+        </a>
+        <a class="swiper-slide" href="#">
+            <img class="swiper_img" src="./IMG/play_list/img5.jpg">
         </a>
     </div>
     <div class="swiper-pagination"></div>
 </div>
+
 <script type="text/javascript">
 
     var deviceWidth = window.screen.width;
     var swiper = document.getElementById('swiperbox');
     swiper.style.height = deviceWidth * 5 / 9 + 'px';
     document.getElementsByClassName('swiper-wrapper')[0].style.lineHeight = deviceWidth * 5 / 9 + 'px';
-
-    var swiperbox = new Vue({
-        el: '#swiperbox',
-        data: {
-            pictures: [
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img1.jpg"},
-                {link: '#', directory: "IMG/play_list/img2.png"}
-            ]
-        }
-    });
 
     var swiper = new Swiper('.swiper-container', {
         loop: true,
@@ -597,66 +667,15 @@
 <div class="block">
     <div class="blocktitle">———— 热销排行榜 ————</div>
     <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
-        <div class="goods" onclick="goodsDetails(1)">
+        <div class="goods" gid="10086" onclick="goodsDetails(this)">
             <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow0.jpg'></div>
             <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
             <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img onclick="addToCart(1)" src="./IMG/recommend/cart.png"
-                                                class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow1.jpg'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow2.jpg'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/light/2-narrow3.jpg'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
-        </div>
-        <div class="goods">
-            <div class="hotsalepicture"><img class='hotsale_img' src='IMG/play_list/img3.png'></div>
-            <div class='hotsaletitle'>百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。百度一下，你就知道。</div>
-            <div class='hotsaledetail'>热烈祝贺中共十九大召开</div>
-            <div class='hotsaleprice'>¥1000<img src="./IMG/recommend/cart.png" class="addtocart_img"></div>
+            <div class='hotsaleprice'>
+                ¥1000
+                <img src="./IMG/recommend/cart.png" class="addtocart_img"
+                     onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'), this)">
+            </div>
         </div>
         <div id="morehotsale">
             <div>
@@ -670,6 +689,7 @@
 
     var pic = document.getElementsByClassName('hotsalepicture');
     var moreHotSale = document.getElementById('morehotsale');
+
     for (var i = 0; i < pic.length; i++) {
         pic[i].style.height = pic[i].clientWidth + 'px';
         pic[i].style.lineHeight = pic[i].clientWidth + 'px';
@@ -677,12 +697,34 @@
     moreHotSale.style.height = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
     moreHotSale.style.lineHeight = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
 
-    function goodsDetails(id) {
-
+    function goodsDetails(object) {
+        /*跳转到详情页*/
+        //window.location.href = "" + object.getAttribute('gid');
+        alert('父元素的事件');
     }
 
-    function addToCart(id) {
+    function getGoodsInfo(goodsId) {
 
+        var waiting_div = document.getElementById('addtocart_waiting');
+        var addToCart_div = document.getElementById('addtocart');
+
+        /* ajax  请求数据 */
+
+
+        setTimeout(function () {
+            addToCart_div.hidden = false;
+            waiting_div.hidden = true;
+        }, 1000);
+    }
+
+    function addGoodsToCart(goodsId, e) {
+        this.event.stopPropagation();//阻止事件传递
+        /*在本页显示添加到购物车界面*/
+        var waiting_div = document.getElementById('addtocart_waiting');
+        body.style.overflow = "hidden";
+        body.style.height = "100%";
+        waiting_div.hidden = false;
+        getGoodsInfo(goodsId);
     }
 
 </script>
@@ -727,18 +769,23 @@
         ———— 你可能喜欢 ————
     </div>
 
-    <div class="goods_in2" v-for="item in items" onclick="goodsDetails()" :goodsid="item.id">
+    <div class="goods_in2" v-for="item in items" onclick="goodsDetails(this)" :gid="item.id">
         <div class="hotsalepicture"><img class='hotsale_img' :src='item.picDir'></div>
         <div class='hotsaletitle'>{{item.title}}</div>
         <div class='hotsaledetail'>{{item.detail}}</div>
         <div class='hotsaleprice'>
             ¥{{item.price}}
-            <img onclick="addToCart()" src="./IMG/recommend/cart.png"
+            <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))" src="./IMG/recommend/cart.png"
                  class="addtocart_img">
         </div>
     </div>
 
 
+</div>
+<div class="block" id="loading">
+    <div class="blocktitle">
+        正在加载更多……
+    </div>
 </div>
 <script type="text/javascript">
 
@@ -778,12 +825,42 @@
         }
     });
 
+    function getDocumentTop() {
+        var scrollTop, bodyScrollTop = 0, documentScrollTop = 0;
+        if (document.body) {
+            bodyScrollTop = document.body.scrollTop;
+        }
+        if (document.documentElement) {
+            documentScrollTop = document.documentElement.scrollTop;
+        }
+        scrollTop = (bodyScrollTop > documentScrollTop) ? bodyScrollTop : documentScrollTop;
+        return scrollTop;
+    }
+
+    //可视窗口高度
+    function getWindowHeight() {
+        windowHeight = document.compatMode == 'CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
+        return windowHeight;
+    }
+
+    //滚动条滚动高度
+    function getScrollHeight() {
+        var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+        if (document.body) {
+            bodyScrollHeight = document.body.scrollHeight;
+        }
+        if (document.documentElement) {
+            documentScrollHeight = document.documentElement.scrollHeight;
+        }
+        scrollHeight = (bodyScrollHeight > documentScrollHeight) ? bodyScrollHeight : documentScrollHeight;
+        return scrollHeight;
+    }
+
     var oldOnscroll = window.onscroll;
     window.onscroll = function () {
         oldOnscroll();
-        if ((document.documentElement.scrollTop || document.body.scrollTop) + window.screen.availHeight == document.body.scrollHeight) {
+        if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
             console.log("已经到底啦");
-            document.getElementById('loading').hidden = false;
             setTimeout(function () {
                 mayLike.items.push(
                     {
@@ -801,20 +878,21 @@
                         price: 1111
                     }
                 );
-                document.getElementById('loading').hidden = false;
             }, 2000)
         }
-
-
     }
 
 </script>
 
-<div class="block" id="loading" hidden>
-    <div class="blocktitle">
-        正在加载更多……
+<div class="addtocart" id="addtocart_waiting" hidden>
+    <div style="height: 15%"></div>
+    <div class="a2c_details">
+        <span class="waiting_span">正在加载……</span>
+        <img src="./IMG/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
     </div>
+
 </div>
+
 
 <div class="addtocart" id="addtocart" hidden>
     <div style="height: 15%"></div>
@@ -832,7 +910,7 @@
                         class="a2c_salenumber">销量:{{saleNumber}}</span></div>
             </div>
         </div>
-        <div class="a2c_middle">
+        <div class="a2c_middle" id="a2c_middle">
             <div class="selectionblock" v-for="(selection,index1) in selections">
                 <div class="option_title">{{selection.title}}</div>
                 <div class="option" v-for="(opt,index2) in selection.option"
@@ -843,12 +921,58 @@
             <div class="placeholder"></div>
         </div>
         <div class="a2c_bottom">
-
+            <table class="a2c_left">
+                <tr>
+                    <td style="font-size: 1.5rem;" onclick="minusOne()">&nbsp-&nbsp</td>
+                    <td>
+                        <input id="number_input" type="number"
+                               onchange="numberOnchange()" value="1">
+                    </td>
+                    <td style="font-size: 1.5rem;" onclick="addOne()">&nbsp+&nbsp</td>
+                </tr>
+            </table>
+            <div class="a2c_right" onclick="confirmToAdd()">加入购物车</div>
         </div>
+        <img src="./IMG/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
     </div>
 </div>
 
 <script type="text/javascript">
+
+    var middleBox = document.getElementById('a2c_middle');
+    middleBox.onscroll = function (e) {
+        e.preventDefault()
+    }
+
+    function closeCart() {
+        var box1 = document.getElementById('addtocart');
+        var box2 = document.getElementById('addtocart_waiting');
+        box1.hidden = true;
+        box2.hidden = true;
+        body.style.overflow = 'auto';
+    }
+
+    function numberOnchange() {
+        var numberInput = document.getElementById('number_input');
+        if (parseInt(numberInput.value) <= 0) {
+            alert("只能输入大于0的值");
+            numberInput.value = 1;
+        }
+    }
+
+    function minusOne() {
+        var numberInput = document.getElementById('number_input');
+        if (numberInput.value > 1) {
+            numberInput.value = parseInt(numberInput.value) - 1;
+        } else {
+            alert('已经是最小啦！')
+        }
+    }
+
+    function addOne() {
+        var numberInput = document.getElementById('number_input');
+        numberInput.value = parseInt(numberInput.value) + 1;
+    }
 
     var addToCart = new Vue({
         el: "#addtocart",
@@ -905,6 +1029,11 @@
             }
         }
     })
+
+    function confirmToAdd() {
+        alert('添加成功！');
+        closeCart()
+    }
 
 </script>
 
