@@ -4,12 +4,17 @@
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>为佐照明</title>
+    <title>佐为照明</title>
     <script type="text/javascript" src="./JavaScript/vue.js"></script>
     <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
     <link rel="stylesheet" href="./CSS/fung.css">
     <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
     <style type="text/css">
+
+        .block {
+            margin-top: 0.5rem;
+            border-bottom: 1px lightgray solid;
+        }
 
         .header {
             height: 3rem;
@@ -20,6 +25,8 @@
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 10;
+            border-bottom: 1px lightgray solid;
         }
 
         .header img {
@@ -65,14 +72,8 @@
         }
 
         .swiper_img {
-            /*width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            line-height: 100%;*/
             width: 100%;
             height: 100%;
-
             vertical-align: middle;
         }
 
@@ -108,6 +109,266 @@
             color: #f55f0a;
         }
 
+        #page2 {
+            margin-top: 0.5rem;
+            padding: 1rem;
+        }
+
+        .detailstable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .detailstable tr {
+            height: 3rem;
+            border-bottom: 1px #eee solid;
+        }
+
+        .detailstable th {
+            text-align: left;
+
+        }
+
+        .detailstable td {
+            text-align: left;
+            color: #9a9a9a;
+        }
+
+        .uppull {
+            margin-top: 0.5rem;
+            width: 100%;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            color: #9a9a9a;
+            font-size: 0.8rem;
+        }
+
+        .uppull span {
+
+            vertical-align: middle;
+        }
+
+        .pull_img {
+            height: 1rem;
+            width: 1rem;
+            vertical-align: middle;
+        }
+
+        #page3 {
+            margin-top: 0.5rem;
+            padding: 1rem
+        }
+
+        .bottomBar {
+            width: 100%;
+            height: 3rem;
+            line-height: 3rem;
+            background-color: #fff;
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            color: #000;
+            text-align: center;
+            border-top: 1px lightgray solid;
+        }
+
+        .contect_cs {
+            width: 30%;
+        }
+
+        .addtocartbutton {
+            width: 35%;
+            color: #fff;
+            background-color: #f28f29;
+        }
+
+        .buynow {
+            width: 35%;
+            color: #fff;
+            background-color: #f55e0b;
+        }
+
+        .addtocart {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 11;
+            color: #000;
+        }
+
+        .a2c_details {
+            background-color: #fff;
+            height: 85%;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .a2c_top {
+            height: 9rem;
+            padding: 0.5rem;
+            display: flex;
+            border-bottom: 1px #f3f3f3 solid;
+        }
+
+        .a2c_img {
+            height: 6rem;
+            width: 6rem;
+            margin-right: 0.5rem;
+        }
+
+        .a2c_title_nso {
+            flex-grow: 1;
+        }
+
+        .a2c_title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+            height: 3rem;
+            color: #000;
+        }
+
+        .a2c_model {
+            font-size: 0.8rem;
+            color: #999;
+            height: 1rem;
+        }
+
+        .a2c_salenumber {
+            color: #000;
+        }
+
+        .a2c_price {
+            color: #f55e0d;
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .a2c_salenumber {
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.8rem;
+            float: right;
+            color: #9f9f9f;
+        }
+
+        .selectionblock {
+            width: 100%;
+            margin-top: 0.5rem;
+            border-bottom: 1px #f3f3f3 solid;
+        }
+
+        .selectionblock:after {
+            content: '';
+            clear: both;
+            display: block;
+            padding-bottom: 0.5rem;
+        }
+
+        .option_title {
+            color: #434343;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .option {
+            background-color: #f3f3f3;
+            display: inline-block;
+            width: 46%;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0.5rem 0 0 2%;
+            float: left;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #444;
+            border: 1px #f3f3f3 solid;
+        }
+
+        .option_selected {
+            border: 1px #f0810e solid;
+            color: #f38200;
+            background-color: #fff;
+        }
+
+        .a2c_middle {
+            flex-grow: 1;
+            overflow: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .a2c_bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3rem;
+            line-height: 3rem;
+            background-color: #fff;
+            border-top: 1px #f3f3f3 solid;
+        }
+
+        .a2c_right {
+            display: inline-block;
+            background-color: #f28f29;
+            height: 100%;
+            width: 8rem;
+            text-align: center;
+            color: #fff;
+            float: right;
+        }
+
+        .a2c_left {
+            display: inline-block;
+        }
+
+        .a2c_left td {
+            border-left: 1px #f3f3f3 solid;
+            border-right: 1px #f3f3f3 solid;
+        }
+
+        .waiting_span {
+            display: inline-block;
+            text-align: center;
+            width: 10rem;
+            height: 2rem;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 0.8rem;
+            color: gray;
+        }
+
+        #number_input {
+            font-size: 1rem;
+            height: 2rem;
+            text-align: center;
+            width: 4rem;
+            border: 0;
+        }
+
+        .closecart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            padding: 0.2rem;
+        }
+
     </style>
 </head>
 <body>
@@ -122,7 +383,7 @@
     <img src="./IMG/details/cart.png" alt="购物车">
 </div>
 
-<div class="placeholder"></div>
+<div class="placeholder" id="jumppage1"></div>
 
 <div class="block" id="page1">
     <div class="swiper-container" id="swiperbox">
@@ -150,12 +411,21 @@
 </div>
 
 <script type="text/javascript">
-
+    var body = document.getElementsByTagName('body')[0];
+    var winHeight, winWidth;
+    if (window.innerHeight) winHeight = window.innerHeight;
+    else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
+    if (window.innerWidth) winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) winWidth = document.body.clientWidth;
+    var page1 = document.getElementById('page1');
+    var topBar = document.getElementById('topbar');
     var mainImgDiv = document.getElementById('swiperbox');
     mainImgDiv.style.height = mainImgDiv.offsetWidth + 'px';
     var swiper = new Swiper('.swiper-container', {
         loop: true,
-        pagination: '.swiper-pagination'
+        pagination: '.swiper-pagination',
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false
     });
 
 </script>
@@ -173,9 +443,21 @@
         },
         methods: {
             selectThis: function (num) {
-                console.log(num);
                 for (var i = 0; i < this.selected.length; i++) {
                     this.selected[i] = (num == i);
+                }
+                switch (num) {
+                    case 0:
+                        window.location.href = '#jumppage1';
+                        break;
+                    case 1:
+                        window.location.href = '#jumppage2';
+                        break;
+                    case 2:
+                        window.location.href = '#jumppage3';
+                        break;
+                    default:
+                        break;
                 }
                 this.selected.push(0);
                 this.selected.pop();
@@ -184,5 +466,307 @@
     });
 
 </script>
+
+<div class="uppull" id="jumppage2">
+    <img class="pull_img" src="./IMG/details/pull.png" alt=""> <span>上拉查看产品参数</span>
+</div>
+
+<div class="block" id="page2">
+    <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">产品参数</h1>
+    <table class="detailstable" id="detailstable">
+        <tr>
+            <th>产品规格：</th>
+            <td>1000*650mm</td>
+        </tr>
+        <tr>
+            <th>包装规格：</th>
+            <td>100*75*25cm</td>
+        </tr>
+        <tr>
+            <th>适用空间：</th>
+            <td>书房/卧室</td>
+        </tr>
+        <tr>
+            <th>产品材质：</th>
+            <td>亚克力/铁艺</td>
+        </tr>
+        <tr>
+            <th>光源类型：</th>
+            <td>LED光源</td>
+        </tr>
+        <tr>
+            <th>光源说明：</th>
+            <td>LED</td>
+        </tr>
+        <tr>
+            <th>功率：<br>(自带光源)</th>
+            <td>120w</td>
+        </tr>
+    </table>
+</div>
+
+<div class="uppull" id="jumppage3">
+    <img class="pull_img" src="./IMG/details/pull.png" alt=""> <span>上拉查看图文详情</span>
+</div>
+
+<div class="block" id="page3">
+    <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">图文详情</h1>
+    <div>
+        我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情我是图文详情
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var page2 = document.getElementById('page2');
+    page2.style.height = "auto";
+    page2.style.minHeight = (winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 8) + "px";
+    var page3 = document.getElementById('page3');
+    page3.style.height = "auto";
+    page3.style.minHeight = (winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 8) + "px";
+
+
+</script>
+
+<div class="placeholder"></div>
+
+<div class="bottomBar">
+    <div class="contect_cs" onclick="window.location.href='http://www.baidu.com'">联系客服</div>
+    <div class="addtocartbutton" onclick="addGoodsToCart(1,1);">加入购物车</div>
+    <!-- addGoodsToCart(goodsid, func) func==1为加入购物车，2为直接购买-->
+    <div class="buynow" onclick="addGoodsToCart(1, 2);">立即购买</div>
+</div>
+
+<script type="text/javascript">
+
+    var swiperBox = document.getElementById('swiperbox');
+    var page2Table = document.getElementById('detailstable');
+
+    //滚动条高度+视窗高度 = 可见区域底部高度
+    var visibleBottom = window.scrollY + document.documentElement.clientHeight;
+    //可见区域顶部高度
+    var visibleTop = window.scrollY;
+
+    var oldOnscroll = window.onscroll;
+    window.onscroll = function () {
+        if (typeof oldOnscroll == 'function') {
+            oldOnscroll();
+        }
+
+
+        if (swiperBox.offsetTop + winWidth - window.scrollY > 0) {
+            /*topBar.selected.splice(0, 0, true);
+            topBar.selected.splice(0, 0, false);
+            topBar.selected.splice(2, 0, false);*/
+            topBar.selected = [true, false, false];
+        } else if (page2Table.offsetTop + winWidth - window.scrollY > 0) {
+            /*topBar.selected.splice(0, 0, false);
+            topBar.selected.splice(0, 0, true);
+            topBar.selected.splice(2, 0, false);*/
+            topBar.selected = [false, true, false];
+
+        } else {
+            topBar.selected = [false, false, true];
+
+        }
+    }
+
+</script>
+
+
+<div class="addtocart" id="addtocart_waiting" hidden>
+    <div style="height: 15%"></div>
+    <div class="a2c_details">
+        <span class="waiting_span">正在加载……</span>
+        <img src="./IMG/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+    </div>
+</div>
+
+
+<div class="addtocart" id="addtocart" hidden>
+    <div style="height: 15%" onclick="closeCart()"></div>
+    <div class="a2c_details">
+        <div class="a2c_top">
+            <img class="a2c_img" src="./IMG/light/2-narrow0.jpg">
+            <div class="a2c_title_nso">
+                <div class="a2c_title">
+                    {{title}}
+                </div>
+                <div class="a2c_model">
+                    型号:{{model}}
+                </div>
+                <div class="a2c_price_nso"><span class="a2c_price">¥{{price}}</span><span
+                        class="a2c_salenumber">销量:{{saleNumber}}</span></div>
+            </div>
+        </div>
+        <div class="a2c_middle" id="a2c_middle">
+            <div class="selectionblock" v-for="(selection,index1) in selections">
+                <div class="option_title">{{selection.title}}</div>
+                <div class="option" v-for="(opt,index2) in selection.option"
+                     :class="{option_selected: opt.option_selected}"
+                     @click="selectOption(index1, index2)">{{opt.name}}
+                </div>
+            </div>
+            <div class="placeholder"></div>
+        </div>
+        <div class="a2c_bottom">
+            <table class="a2c_left">
+                <tr>
+                    <td style="font-size: 1.5rem;" onclick="minusOne()">&nbsp-&nbsp</td>
+                    <td>
+                        <input id="number_input" type="number"
+                               onchange="numberOnchange()" value="1">
+                    </td>
+                    <td style="font-size: 1.5rem;" onclick="addOne()">&nbsp+&nbsp</td>
+                </tr>
+            </table>
+            <div class="a2c_right" id="add_n_buy" onclick="confirmToAdd()">加入购物车</div>
+        </div>
+        <img src="./IMG/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var addAndBuy = document.getElementById('add_n_buy');
+
+
+    function addGoodsToCart(goodsId, func) {
+        /*在本页显示添加到购物车界面*/
+        this.event.stopPropagation();
+        var waiting_div = document.getElementById('addtocart_waiting');
+        body.style.overflow = "hidden";
+        body.style.height = "100%";
+        waiting_div.hidden = false;
+        console.log(addAndBuy);
+        getGoodsInfo(goodsId, func);
+    }
+
+    function getGoodsInfo(goodsId, func) {
+
+        /* ajax  请求产品数据 */
+
+        setTimeout(function () {
+            var box1 = document.getElementById('addtocart');
+            var box2 = document.getElementById('addtocart_waiting');
+            var addAndBuy = document.getElementById('add_n_buy');
+            box1.hidden = false;
+            box2.hidden = true;
+            if (func == 1) {
+                addAndBuy.innerHTML = "加入购物车";
+                addAndBuy.setAttribute('onclick', 'addMe()');
+            } else if (func == 2) {
+                addAndBuy.innerHTML = "立即购买";
+                addAndBuy.setAttribute('onclick', 'buyMe()');
+            }
+        }, 1000);
+    }
+
+    var middleBox = document.getElementById('a2c_middle');
+    middleBox.onscroll = function (e) {
+        e.preventDefault()
+    }
+
+    function closeCart() {
+        var box1 = document.getElementById('addtocart');
+        var box2 = document.getElementById('addtocart_waiting');
+        box1.hidden = true;
+        box2.hidden = true;
+        body.style.overflow = 'auto';
+    }
+
+    function numberOnchange() {
+        var numberInput = document.getElementById('number_input');
+        if (parseInt(numberInput.value) <= 0) {
+            alert("只能输入大于0的值");
+            numberInput.value = 1;
+        }
+    }
+
+    function minusOne() {
+        var numberInput = document.getElementById('number_input');
+        if (numberInput.value > 1) {
+            numberInput.value = parseInt(numberInput.value) - 1;
+        } else {
+            alert('已经是最小啦！')
+        }
+    }
+
+    function addOne() {
+        var numberInput = document.getElementById('number_input');
+        numberInput.value = parseInt(numberInput.value) + 1;
+    }
+
+    var addToCart = new Vue({
+        el: "#addtocart",
+        data: {
+            title: "女孩因没见到偶像急哭 Angelababy降临安慰合照 女孩因没见到偶像急哭 Angelababy降临安慰合照 女孩因没见到偶像急哭 Angelababy降临安慰合照",
+            model: "Subaru BRZ",
+            price: "666",
+            saleNumber: '1688',
+            selections: [
+                {
+                    title: '选择1',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择2',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择3',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                },
+                {
+                    title: '选择4',
+                    option: [
+                        {name: '选项1', option_selected: true},
+                        {name: '选项2', option_selected: false},
+                        {name: '选项3', option_selected: false},
+                        {name: '选项4', option_selected: false}
+                    ],
+                }
+            ]
+        },
+        methods: {
+            selectOption: function (indexSelection, indexOption) {
+                for (var i = 0; i < this.selections[indexSelection].option.length; i++) {
+                    this.selections[indexSelection].option[i].option_selected = false;
+                }
+                this.selections[indexSelection].option[indexOption].option_selected = true;
+            }
+        }
+    });
+    
+    function buyMe() {
+        /*直接购买产品*/
+        alert("购买产品！");
+        closeCart();
+    }
+
+    function addMe() {
+        /*加入购物车*/
+        alert("添加到购物车！");
+        closeCart();
+    }
+
+</script>
+
+
 </body>
 </html>

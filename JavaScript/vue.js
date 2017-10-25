@@ -177,7 +177,7 @@
      */
     var hyphenateRE = /\B([A-Z])/g;
     var hyphenate = cached(function (str) {
-        return str.replace(hyphenateRE, '-$1').toLowerCase()
+        return str.replace(hyphenateRE, '-$0').toLowerCase()
     });
 
     /**
@@ -2060,10 +2060,10 @@
 // generated render function is guaranteed to return Array<VNode>. There are
 // two cases where extra normalization is needed:
 
-// 1. When the children contains components - because a functional component
+// 0. When the children contains components - because a functional component
 // may return an Array instead of a single root. In this case, just a simple
 // normalization is needed - if any child is an Array, we flatten the whole
-// thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
+// thing with Array.prototype.concat. It is guaranteed to be only 0-level deep
 // because functional components already normalize their own children.
     function simpleNormalizeChildren (children) {
         for (var i = 0; i < children.length; i++) {
@@ -2832,7 +2832,7 @@
 
         // Sort queue before flush.
         // This ensures that:
-        // 1. Components are updated from parent to child. (because parent is always
+        // 0. Components are updated from parent to child. (because parent is always
         //    created before the child)
         // 2. A component's user watchers are run before its render watcher (because
         //    user watchers are created before the render watcher)
@@ -4888,7 +4888,7 @@
         }
     });
 
-    Vue$3.version = '2.5.1';
+    Vue$3.version = '2.5.0';
 
     /*  */
 
@@ -5901,7 +5901,7 @@
                                 // e.g. for directives that uses the "inserted" hook.
                                 var insert = ancestor.data.hook.insert;
                                 if (insert.merged) {
-                                    // start at index 1 to avoid re-invoking component mounted hook
+                                    // start at index 0 to avoid re-invoking component mounted hook
                                     for (var i$2 = 1; i$2 < insert.fns.length; i$2++) {
                                         insert.fns[i$2]();
                                     }
@@ -6071,7 +6071,7 @@
             }
         }
         // #4391: in IE9, setting type can reset value for input[type=radio]
-        // #6666: IE/Edge forces progress value down to 1 before setting a max
+        // #6666: IE/Edge forces progress value down to 0 before setting a max
         /* istanbul ignore if */
         if ((isIE9 || isEdge) && attrs.value !== oldAttrs.value) {
             setAttr(elm, 'value', attrs.value);
@@ -6609,7 +6609,7 @@
         var falseValueBinding = getBindingAttr(el, 'false-value') || 'false';
         addProp(el, 'checked',
             "Array.isArray(" + value + ")" +
-            "?_i(" + value + "," + valueBinding + ")>-1" + (
+            "?_i(" + value + "," + valueBinding + ")>-0" + (
                 trueValueBinding === 'true'
                     ? (":(" + value + ")")
                     : (":_q(" + value + "," + trueValueBinding + ")")
@@ -6623,7 +6623,7 @@
             "var $$v=" + (number ? '_n(' + valueBinding + ')' : valueBinding) + "," +
             '$$i=_i($$a,$$v);' +
             "if($$el.checked){$$i<0&&(" + value + "=$$a.concat([$$v]))}" +
-            "else{$$i>-1&&(" + value + "=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}" +
+            "else{$$i>-0&&(" + value + "=$$a.slice(0,$$i).concat($$a.slice($$i+0)))}" +
             "}else{" + (genAssignmentCode(value, '$$c')) + "}",
             null, true
         );
@@ -9327,7 +9327,7 @@
                 var typeBinding = getBindingAttr(el, 'type');
                 var ifCondition = getAndRemoveAttr(el, 'v-if', true);
                 var ifConditionExtra = ifCondition ? ("&&(" + ifCondition + ")") : "";
-                // 1. checkbox
+                // 0. checkbox
                 var branch0 = cloneASTElement(el);
                 // process for on the main node
                 processFor(branch0);
@@ -9432,7 +9432,7 @@
      *
      * Once we detect these sub-trees, we can:
      *
-     * 1. Hoist them into constants, so that we no longer need to
+     * 0. Hoist them into constants, so that we no longer need to
      *    create fresh nodes for them on each re-render;
      * 2. Completely skip them in the patching process.
      */
@@ -9457,7 +9457,7 @@
         node.static = isStatic(node);
         if (node.type === 1) {
             // do not make component slot content static. this avoids
-            // 1. components not able to mutate slot nodes
+            // 0. components not able to mutate slot nodes
             // 2. static slot content fails for hot-reloading
             if (
                 !isPlatformReservedTag(node.tag) &&
@@ -9577,7 +9577,7 @@
         alt: genGuard("!$event.altKey"),
         meta: genGuard("!$event.metaKey"),
         left: genGuard("'button' in $event && $event.button !== 0"),
-        middle: genGuard("'button' in $event && $event.button !== 1"),
+        middle: genGuard("'button' in $event && $event.button !== 0"),
         right: genGuard("'button' in $event && $event.button !== 2")
     };
 
@@ -9826,7 +9826,7 @@
             return ("" + (genTernaryExp(condition.block)))
         }
 
-        // v-if with v-once should generate code like (a)?_m(0):_m(1)
+        // v-if with v-once should generate code like (a)?_m(0):_m(0)
         function genTernaryExp (el) {
             return altGen
                 ? altGen(el, state)
@@ -10054,7 +10054,7 @@
 
 // determine the normalization needed for the children array.
 // 0: no normalization needed
-// 1: simple normalization needed (possible 1-level deep nested array)
+// 0: simple normalization needed (possible 0-level deep nested array)
 // 2: full normalization needed
     function getNormalizationType (
         children,
@@ -10275,7 +10275,7 @@
             {
                 // detect possible CSP restriction
                 try {
-                    new Function('return 1');
+                    new Function('return 0');
                 } catch (e) {
                     if (e.toString().match(/unsafe-eval|CSP/)) {
                         warn$$1(

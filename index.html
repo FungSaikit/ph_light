@@ -4,7 +4,7 @@
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>为佐照明</title>
+    <title>佐为照明</title>
     <link rel="stylesheet" href="./CSS/fung.css">
     <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
     <script type="text/javascript" src="./JavaScript/vue.js"></script>
@@ -541,7 +541,7 @@
 <div class="hotline">
     <table style="border-collapse: collapse;height: 2rem;">
         <tr>
-            <td><span class="hotlinetitle">品豪头条</span></td>
+            <td><span class="hotlinetitle">佐为头条</span></td>
             <td><a href="#" class="hotlinecomment">热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开</a>
             </td>
         </tr>
@@ -772,7 +772,7 @@
     <div class="goods_in2" v-for="item in items" onclick="goodsDetails(this)" :gid="item.id">
         <div class="hotsalepicture"><img class='hotsale_img' :src='item.picDir'></div>
         <div class='hotsaletitle'>{{item.title}}</div>
-        <div class='hotsaledetail'>{{item.detail}}</div>
+        <div class='hotsaledetail'>{{item.details}}</div>
         <div class='hotsaleprice'>
             ¥{{item.price}}
             <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))" src="./IMG/recommend/cart.png"
@@ -890,7 +890,6 @@
         <span class="waiting_span">正在加载……</span>
         <img src="./IMG/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
     </div>
-
 </div>
 
 
