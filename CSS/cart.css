@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeeeee;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.placeholder {
+    height: 3rem;
+    text-align: center;
+}
+
+.topbar {
+    background-color: #f38200;
+    border: 0;
+}
+
+.topbar_right {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+}
+
+.topbar_middle {
+    color: #FFFFFF;
+}
+
+.cart_menu {
+    width: 100%;
+    height: 3rem;
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid lightgrey;
+}
+
+.menu_sub_div {
+    display: inline-block;
+    height: 100%;
+}
+
+.select_all_div {
+    line-height: 3rem;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.select_all_span {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+#total_div {
+    line-height: 3rem;
+    float: left;
+    width: 50%;
+}
+
+#total_div span {
+    color: #f18200;
+}
+
+#pay_div {
+    background-color: #f38200;
+    width: 30%;
+    float: left;
+}
+
+#pay_div a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    height: 3em;
+    width: 100%;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.delete_button {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    line-height: 3rem;
+    text-decoration: none;
+    background: #f38200;
+    color: #fff;
+    float: right;
+}
+
+.goods {
+    height: 8rem;
+    width: 100%;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    vertical-align: top;
+}
+
+.goods_top {
+    height: 6rem;
+    border-bottom: 1px #eeeeee solid;
+}
+
+.goods_cb {
+    display: inline-block;
+    line-height: 6rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.goods_pic {
+    display: inline-block;
+    height: 6rem;
+    width: 6rem;
+}
+
+.goods_pic_img {
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
+}
+
+.goods_dt {
+    display: inline-block;
+}
+
+.goods_tt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+}
+
+.goods_md {
+    font-size: 0.6rem;
+    color: #9a9a9a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+}
+
+.goods_prz {
+    color: #f65801;
+}
+
+.number_div {
+    height: 2rem;
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.number_table {
+    margin-top: 0.1rem;
+    margin-left: 0.1rem;
+    text-align: center;
+    width: 96%;
+}
+
+.number_table td {
+    border: 1px solid #eeeeee;
+    height: 1.5rem;
+}
+
+.number_table a {
+    text-decoration: none;
+    color: gray;
+}
+
+.number_table input {
+    text-align: center;
+    width: 90%;
+    border: 0;
+}
+
+.color_div {
+    height: 2rem;
+    line-height: 2rem;
+    width: 58%;
+    display: inline-block;
+}
+
+.color_option {
+    display: inline-block;
+    height: 90%;
+    width: 100%;
+    text-align: center;
+    border: 0;
+    background-color: #fff;
+    vertical-align: top;
+}
+
+.emptycart {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10em;
+    height: 15em;
+    text-align: center;
+}
+
+.emptycart img {
+    width: 100%;
+}
+
+.emptycart div {
+    margin-bottom: 10%;
+}
+
+.emptycart button {
+    width: 100%;
+    height: 15%;
+    background-color: #f38200;
+    border: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.pay_wait {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.center {
+    width: 10em;
+    height: 15em;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+.center img {
+    width: 100%;
+}
+
+.topbar {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: #f38200;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+}
+
+.topbar_left {
+    height: 1.1rem;
+    margin: 0 1rem;
+    vertical-align: middle;
+}
+
+.topbar_middle {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #fff;
+    flex-grow: 1;
+}
+
+.topbar_right {
+    font-size: 1rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.placeholder {
+    height: 2.5rem;
+}

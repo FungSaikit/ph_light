@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>钱包</title>
+    <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
+    <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: '黑体';
+        }
+
+        body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card_div {
+            background-color: #eb9c01;
+            height: 10rem;
+            vertical-align: middle;
+            text-align: center;
+            color: #fff;
+            white-space: nowrap;
+            overflow: auto;
+            border-bottom: 1px #fff solid;
+            position: relative;
+        }
+
+        .topbar_button {
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: middle;
+            padding: 0.5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .page {
+            color: #fff;
+            height: 1rem;
+            line-height: 1rem;
+            width: 100%;
+            background-color: #eb9c01;
+            text-align: center;
+        }
+
+        .bottom {
+            flex-grow: 1;
+            position: relative;
+            padding: 1rem;
+            overflow: scroll;
+        }
+
+        .details {
+            border-bottom: 1px #efefef solid;
+        }
+
+        .detailstop {
+            height: 2rem;
+        }
+
+        .detailsbottom {
+            height: 2rem;
+        }
+
+        .price {
+            line-height: 2rem;
+            float: left;
+            font-size: 1rem;
+        }
+
+        .status {
+            line-height: 2rem;
+            float: right;
+            color: #027e02;
+        }
+
+        .status_error {
+            line-height: 2rem;
+            float: right;
+            color: #f00;
+        }
+
+        .status_waiting {
+            line-height: 2rem;
+            float: right;
+            color: #f38200;
+        }
+
+        .type {
+            line-height: 2rem;
+            float: left;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .date {
+            line-height: 2rem;
+            float: right;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .head {
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .end {
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .nolist {
+            width: 10rem;
+            height: 2rem;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            height: 3rem;
+            background-color: #eb9c01;
+        }
+
+        .option {
+            float: left;
+            width: 25%;
+            text-align: center;
+            line-height: 3rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: lighter;
+        }
+
+        #selected {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        .swiper-container {
+            width: 80%;
+            height: 6rem;
+            position: relative;
+            top: 2.5rem;
+        }
+
+        .line1 {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .moneynumber{
+            font-size: 1.8rem;
+        }
+
+        .line2 {
+            color: #fff;
+        }
+
+        .line2_img {
+            height: 1.2rem;
+            width: 1.2rem;
+            vertical-align: bottom;
+        }
+
+        .line2_span {
+            vertical-align: bottom;
+            border-bottom: 1px #fff solid;
+        }
+
+        .line3 {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="card_div">
+    <img src="./IMG/top_bar/back_white.png" class="topbar_button">
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="line1">
+                    ¥ <span class="moneynumber">39,606</span>.00
+                </div>
+                <div class="line2">
+                    <img class="line2_img" src="IMG/personal_center/money_out.png" alt="">
+                    <span class="line2_span">可提现货款</span>
+                </div>
+                <div class="line3">
+                    点击提现
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="line1" style="margin-top: 0.5rem">
+                    ¥ <span class="moneynumber">20,000</span>.00
+                </div>
+                <div class="line2">
+                    <img src="./IMG/personal_center/money_waiting.png" alt="" class="line2_img">
+                    <span class="line2_span">代结金额</span>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+
+</div>
+
+<ul>
+    <li><a class="option" onclick="select(this)" id="selected" href="javascript: void(0)">全部</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">成功</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">失败</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">待结算</a></li>
+</ul>
+
+<div class="bottom">
+
+    <div class="head">———— 结算明细 ————</div>
+    <hr>
+
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥582.90</span>
+            <span class="status">成功</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥988.80</span>
+            <span class="status_waiting">待结算</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥58.90</span>
+            <span class="status_error">失败</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="end">———— 没有更多啦 ————</div>
+
+    <div class="nolist">
+        没有本类结算哦
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+    })
+</script>
+</body>
+
+<script type="text/javascript">
+
+    var body = document.getElementsByTagName("body")[0];
+    var options = document.getElementsByClassName("option");
+
+    var listLength = document.getElementsByClassName("details").length;
+
+    document.getElementsByClassName("nolist")[0].hidden = listLength;
+    document.getElementsByClassName("end")[0].hidden = !listLength;
+
+    body.style.height = window.screen.height + "px";
+
+    function select(object) {
+        for (var i = 0; i < options.length; i++) {
+            options[i].id = "";
+        }
+        object.id = "selected";
+    }
+
+
+</script>
+</html>

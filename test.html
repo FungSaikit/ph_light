@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+<script type="text/javascript">
+
+    var box = document.getElementById('box');
+
+    var x = 500;
+    var y = 500;
+
+    var movement = function () {
+        var currentX = box.offsetLeft;
+        var currentY = box.offsetTop;
+        console.log(currentX + ',' + currentY);
+        if (currentX == x && currentY == y) {
+            return true;
+        }
+        if (currentX != x) {
+            box.style.left = currentX + Math.ceil((x - currentX) / 20) + 'px';
+        }
+
+        if (currentY != y) {
+            box.style.top = currentY + Math.ceil((y - currentY) / 20) + 'px';
+        }
+        setTimeout(movement, 100);
+    }
+
+    movement();
+
+</script>
+
+</body>
+</html>

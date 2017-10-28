@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<meta name="viewport"
+      content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>佐为照明</title>
+    <link rel="stylesheet" href="./CSS/fung.css">
+    <link rel="stylesheet" href="./CSS/m_menu.css">
+    <style type="text/css">
+
+        .block {
+            padding: 0;
+        }
+
+        .blocktitle {
+            text-align: left;
+            font-size: 1.2rem;
+            color: #f07a00;
+            padding: 0.3rem;
+            vertical-align: middle;
+            margin-bottom: 0;
+        }
+
+        .block_box {
+            width: 100%;
+            display: flex;
+        }
+
+        .block_box_sub {
+            padding: 0.5rem 0;
+            border-right: 2px #eee solid;
+            border-top: 2px #eee solid;
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+
+        .block_img_div {
+            width: 30%;
+            margin: 0.5rem auto;
+            text-align: center;
+        }
+
+        .block_img_div img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+        .corner_number {
+            display: inline-block;
+            font-size: 0.8rem;
+            background-color: red;
+            color: #fff;
+            border: 1px #fff solid;
+            height: 1rem;
+            line-height: 1rem;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            border-radius: 1rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .box_smallfont {
+            font-size: 0.8rem;
+        }
+
+        .bgc_orange {
+            background-color: #eb9c01;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="m_menu">
+
+    <img class="background" src="./IMG/personal_center/pc_bg.jpg">
+
+    <div class="navibar">
+        <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button">
+        <img src="./IMG/top_bar/setting_white.png" style="float: right;" class="topbar_button"
+             onclick="showPersonalSetting()">
+    </div>
+    <img class="usericon" src="IMG/user/icon.jpg" alt="">
+    <div class="username">旺图思瑞</div>
+    <div class="user_menu">
+
+        <div class="user_menu_sub">
+            <div>¥ 0</div>
+            <div>账户余额</div>
+        </div>
+
+        <div class="user_menu_sub user_menu_sub_center">
+            <div>4850</div>
+            <div>会员积分</div>
+        </div>
+
+        <div class="user_menu_sub">
+            <div>2</div>
+            <div>&nbsp优惠券&nbsp</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="block">
+    <div class="blocktitle">我的订单</div>
+    <div class="block_box">
+        <div class="block_box_sub">
+            <div class="block_img_div" style="width: 25%">
+                <img src="IMG/user/0.png">
+            </div>
+            <span>待付款</span>
+            <span class="corner_number">25</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/1.png">
+            </div>
+            <span>待发货</span>
+            <span class="corner_number">13</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/2.png">
+            </div>
+            <span>代收货</span>
+            <span class="corner_number">178</span>
+        </div>
+        <div class="block_box_sub" style="border-right: 0;">
+            <div class="block_img_div">
+                <img src="IMG/user/3.png">
+            </div>
+            <span>退款/退货</span>
+            <span class="corner_number">10</span>
+        </div>
+
+    </div>
+</div>
+
+<div class="block">
+    <div class="blocktitle">客户订单</div>
+    <div class="block_box">
+        <div class="block_box_sub">
+            <div class="block_img_div" style="width: 25%">
+                <img src="IMG/user/0.png">
+            </div>
+            <span>待付款</span>
+            <span class="corner_number">5</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/1.png">
+            </div>
+            <span>待发货</span>
+            <span class="corner_number">13</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/2.png">
+            </div>
+            <span>代收货</span>
+            <span class="corner_number">178</span>
+        </div>
+        <div class="block_box_sub" style="border-right: 0;">
+            <div class="block_img_div">
+                <img src="IMG/user/3.png">
+            </div>
+            <span>退款/退货</span>
+            <span class="corner_number">10</span>
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="blocktitle">其他功能</div>
+    <div class="block_box">
+        <div class="block_box_sub">
+            <div class="block_img_div" style="width: 25%">
+                <img src="IMG/user/00.png">
+            </div>
+            <span class="box_smallfont">地址管理</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/01.png">
+            </div>
+            <span class="box_smallfont">货款中心</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/02.png">
+            </div>
+            <span class="box_smallfont">售后列表</span>
+        </div>
+        <div class="block_box_sub">
+            <div class="block_img_div">
+                <img src="IMG/user/03.png">
+            </div>
+            <span class="box_smallfont">客户列表</span>
+        </div>
+        <div class="block_box_sub" style="border-right: 0;">
+            <div class="block_img_div">
+                <img src="IMG/user/04.png">
+            </div>
+            <span class="box_smallfont">客户消息</span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var imgBox = document.getElementsByClassName('block_img_div');
+    for (var i = 0; i < imgBox.length; i++) {
+        imgBox[i].style.height = imgBox[1].offsetWidth + 'px';
+        imgBox[i].style.lineHeight = imgBox[1].offsetWidth + 'px';
+    }
+
+</script>
+
+<div class="page" id="personal_setting" hidden>
+
+    <div class="navibar bgc_orange">
+        <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button" onclick="hidePersonalSetting()">
+    </div>
+
+    <div class="menu_line" style="height: 6rem; line-height: 6rem" onclick="viewIcon()">
+        <span>会员头像</span>
+        <div class="menu_content">
+            <img src="./IMG/user/icon.jpg" class="inner_usericon" style=" border-color: lightgray;">
+        </div>
+        <img src="./IMG/user/to.png" style="margin: 2.5rem 0.5rem;" class="change_img">
+    </div>
+    <div class="menu_line">
+        <span>会员昵称</span>
+        <div class="menu_content">
+            FungSaikit
+        </div>
+        <div class="change_img"></div>
+    </div>
+    <div class="menu_line">
+        <span>性别</span>
+        <div class="menu_content">
+            男
+        </div>
+        <div class="change_img"></div>
+    </div>
+    <div style="height: 0.5rem"></div>
+    <div class="menu_line">
+        <span>姓名</span>
+        <div class="menu_content">
+            Jack Fung
+        </div>
+        <div class="change_img"></div>
+    </div>
+    <div class="menu_line">
+        <span>联系电话</span>
+        <div class="menu_content">
+            13316302055
+        </div>
+        <div class="change_img"></div>
+    </div>
+    <div class="menu_line" onclick="changeQNumber()">
+        <span>QQ号</span>
+        <div class="menu_content">
+            675703302
+        </div>
+        <img src="./IMG/user/to.png" class="change_img">
+    </div>
+    <div class="menu_line" onclick="changeWeChatNumber()">
+        <span>微信号</span>
+        <div class="menu_content">
+            jackfung1996
+        </div>
+        <img src="./IMG/user/to.png" class="change_img">
+    </div>
+    <div class="menu_line" onclick="viewQRCode()">
+        <span>我的二维码</span>
+        <div class="menu_content">
+            点击查看二维码
+        </div>
+        <img src="./IMG/user/to.png" class="change_img">
+    </div>
+
+    <div class="placeholder"></div>
+
+</div>
+
+<script type="text/javascript">
+
+    var personalSetting = document.getElementById('personal_setting');
+
+    function showPersonalSetting() {
+        personalSetting.hidden = false;
+    }
+
+    function hidePersonalSetting() {
+        personalSetting.hidden = true;
+    }
+
+    function viewIcon() {
+        /*微信接口查看头像*/
+        alert('微信接口查看头像');
+    }
+
+    function viewQRCode() {
+        /*微信接口查看二维码*/
+        alert('微信接口查看二维码');
+    }
+
+    function changeQNumber() {
+        var QNumber = prompt("请输入QQ号:");
+        if (QNumber!=null){
+            if (QNumber.length < 5) {
+                alert("输入长度不正确!请重新输入");
+                changeQNumber();
+            } else {
+                if (isNaN(QNumber)) {
+                    alert("输入了非数字字符!请重新输入");
+                    changeQNumber();
+                } else {
+                    /* a j a x 请 求*/
+
+                    alert("您的QQ号成功改为：" + QNumber);
+                }
+            }
+        }
+
+    }
+
+    function changeWeChatNumber() {
+        var wcNumber = prompt("请输入微信号:");
+        if (wcNumber!=null){
+            if (wcNumber.length > 20 || wcNumber < 6) {
+                alert("您输入的微信号不正确！")
+            } else {
+
+                /* a j a x 请 求*/
+
+                alert("您的微信号成功改为：" + QNumber);
+
+            }
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

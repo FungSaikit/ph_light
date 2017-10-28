@@ -1,0 +1,104 @@
+.m_menu {
+    width: 98%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.navibar {
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.topbar_button {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    padding: 0.5rem;
+    float: left;
+}
+
+.usericon {
+    height: 5rem;
+    width: 5rem;
+    border: 3px #fff solid;
+    border-radius: 3rem;
+    margin: 0.5rem auto;
+    vertical-align: middle;
+}
+
+.inner_usericon {
+    height: 4rem;
+    width: 4rem;
+    border: 3px #fff solid;
+    border-radius: 3rem;
+    margin: 0.5rem auto;
+    vertical-align: middle;
+}
+
+.menu_content {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    flex-grow: 1;
+    color: #6a6873;
+}
+
+.change_img {
+    margin: 1rem 0.5rem;
+    height: 1rem;
+    width: 0.5rem;
+    vertical-align: middle;
+}
+
+.username {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.user_menu {
+    border-top: 2px #f0ba4e solid;
+    margin-top: 0.5rem;
+    flex-grow: 1;
+    display: flex;
+}
+
+.user_menu_sub {
+    color: #FFF;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.user_menu_sub_center {
+    border-left: 2px #f0ba4e solid;
+    border-right: 2px #f0ba4e solid;
+}
+
+.bottom_button {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.isChanged {
+    color: #f0ba4e;
+}

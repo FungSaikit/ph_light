@@ -174,7 +174,7 @@
             height: auto;
             background-color: #fff;
             vertical-align: top;
-            overflow: hidden;
+            overflow: auto;
             float: left;
         }
 
@@ -184,6 +184,7 @@
             height: auto;
             float: left;
             vertical-align: top;
+            overflow: auto;
         }
 
         .leftoption {
@@ -231,8 +232,8 @@
             background-color: #fff;
             border: 1px #fff solid;
             width: 45%;
-            height: 3rem;
-            line-height: 3rem;
+            height: 2rem;
+            line-height: 2rem;
             text-align: center;
             margin-left: 3%;
             margin-top: 0.5rem;
@@ -287,6 +288,10 @@
             margin: 2%;
         }
 
+        #lowprice, #highprice {
+            border: 0;
+        }
+
     </style>
 </head>
 
@@ -316,7 +321,7 @@
             价格
             <span class='dir'>{{words}}</span>
         </div>
-        <div class="menuselection">筛选</div>
+        <div class="menuselection" onclick="displayClassification()">筛选</div>
     </div>
 </div>
 
@@ -842,6 +847,7 @@
             <input type="number" id="lowprice" class="rightoption_in2" placeholder="最低价" value="" onchange="inputMoney()">
             <input type="number" id="highprice" class="rightoption_in2" placeholder="最高价" value="" onchange="inputMoney()">
         </div>
+        <div class="placeholder" style="height: 3rem;"></div>
         <div class="bottomBar">
             <button class="bottom_button" onclick="clearAll()">重置</button>
             <button class="bottom_button" onclick="backToList()">取消</button>
@@ -990,8 +996,8 @@
     var winHeight;
     if (window.innerHeight) winHeight = window.innerHeight;
     else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
-    document.getElementsByClassName('left')[0].style.height = winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 2.5 + 'px';
-    document.getElementsByClassName('right')[0].style.height = winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 2.5 + 'px';
+    document.getElementsByClassName('left')[0].style.height = winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 5 + 'px';
+    document.getElementsByClassName('right')[0].style.height = winHeight - parseInt(window.getComputedStyle(document.documentElement)["fontSize"]) * 5 + 'px';
 
     function displayClassification() {
         classificationPage.style.display='block';
