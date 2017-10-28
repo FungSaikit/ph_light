@@ -19,7 +19,7 @@ table {
 }
 
 .topbar {
-    background-color: #f38200;
+    background-color: #eb9c01;
     border: 0;
 }
 
@@ -28,9 +28,7 @@ table {
     color: #FFFFFF;
 }
 
-.topbar_middle {
-    color: #FFFFFF;
-}
+
 
 .cart_menu {
     width: 100%;
@@ -65,11 +63,11 @@ table {
 }
 
 #total_div span {
-    color: #f18200;
+    color: #eb9c01;
 }
 
 #pay_div {
-    background-color: #f38200;
+    background-color: #eb9c01;
     width: 30%;
     float: left;
 }
@@ -90,7 +88,7 @@ table {
     text-align: center;
     line-height: 3rem;
     text-decoration: none;
-    background: #f38200;
+    background: #eb9c01;
     color: #fff;
     float: right;
 }
@@ -152,7 +150,7 @@ table {
 }
 
 .goods_prz {
-    color: #f65801;
+    color: #eb9c01;
 }
 
 .number_div {
@@ -225,7 +223,7 @@ table {
 .emptycart button {
     width: 100%;
     height: 15%;
-    background-color: #f38200;
+    background-color: #eb9c01;
     border: 0;
     border-radius: 4px;
     color: #ffffff;
@@ -261,7 +259,7 @@ table {
 .topbar {
     height: 2.5rem;
     line-height: 2.5rem;
-    background-color: #f38200;
+    background-color: #eb9c01;
     text-align: center;
     position: fixed;
     top: 0;
@@ -277,7 +275,7 @@ table {
 
 .topbar_middle {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #fff;
     flex-grow: 1;
 }

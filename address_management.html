@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>佐为照明</title>
+    <link rel="stylesheet" href="./CSS/fung.css">
+</head>
+
+<style type="text/css">
+
+    .addressitem {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 0.5rem;
+    }
+
+    .addresstop {
+        width: 96%;
+        border-bottom: 1px #eee solid;
+        padding: 2%;
+    }
+
+    .addressbottom {
+        width: 96%;
+        padding: 2%;
+    }
+
+    .line1 {
+        color: dimgray;
+        margin-bottom: 0.5rem;
+    }
+
+    .phonenum {
+        float: right;
+    }
+
+    .line2 {
+        color: dimgray;
+        font-size: 0.9rem;
+    }
+
+    .addressbottom {
+        text-align: right;
+    }
+
+    .button {
+        display: inline-block;
+        padding-right: 0.5rem;
+    }
+
+    .button img {
+        height: 1.2rem;
+        width: 1.2rem;
+        vertical-align: bottom;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        vertical-align: bottom;
+    }
+
+    .bottom_button {
+        width: 100%;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        background-color: #eb9c01;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .menu_line input, .menu_line textarea {
+        flex-grow: 1;
+        text-align: right;
+        font-size: 1rem;
+        border: 0;
+        color: gray;
+    }
+
+</style>
+
+<body>
+
+<div class="navibar">
+    <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button">
+    <div class="topbarmiddle">地址管理</div>
+    <div style="float: right;" class="topbar_button"></div>
+</div>
+
+<div class="placeholder" style="height: 2.5rem;"></div>
+<div id="addresslist">
+
+    <div class="addressitem">
+        <div class="addresstop">
+            <div class="line1"><span>冯世杰1</span> <span class="phonenum">13316302055</span></div>
+            <div class="line2">广东省广州市天河区华南农业大学泰山区创客空间</div>
+        </div>
+        <div class="addressbottom">
+            <div class="button" onclick="editAddress(this.parentNode.parentNode)">
+                <img src="./IMG/personal_center/edit.png">
+                <span>编辑</span>
+            </div>
+            <div class="button" onclick="deleteAddress(this.parentNode.parentNode)">
+                <img src="./IMG/personal_center/delete.png">
+                <span>删除</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="placeholder"></div>
+
+<div class="bottom_button" onclick="createAddress()">添加新地址</div>
+
+<div class="page" id="edit_div" hidden>
+
+    <div class="navibar">
+        <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button" onclick="closeEdit()">
+        <div class="topbarmiddle" id="e_or_c_title">编辑地址</div>
+        <div style="float: right;color: #fff; margin-right: 0.5rem;" onclick="saveChange()" id="savebutton">保存</div>
+    </div>
+
+    <div class="placeholder"></div>
+
+    <div class="menu_line">
+        收货人 <input id="edit_div_line0">
+    </div>
+    <div class="menu_line">
+        联系电话 <input id="edit_div_line1">
+    </div>
+    <div class="menu_line">
+        收货地址 <br>
+        <textarea id="edit_div_line2"></textarea>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    var editDiv = document.getElementById('edit_div');
+    var editDivLine0 = document.getElementById('edit_div_line0');
+    var editDivLine1 = document.getElementById('edit_div_line1');
+    var editDivLine2 = document.getElementById('edit_div_line2');
+    var eOrCTitle = document.getElementById('e_or_c_title');
+    var saveButton = document.getElementById('savebutton');
+
+    function createAddress() {
+        editDiv.hidden = false;
+        eOrCTitle.innerText = "新建地址";
+        editDivLine0.value = "";
+        editDivLine1.value = "";
+        editDivLine2.value = "";
+        saveButton.setAttribute("onclick", "saveCreate()");
+    }
+
+    function editAddress(object) {
+        editDiv.hidden = false;
+        eOrCTitle.innerText = "编辑地址";
+        editDivLine0.value = object.childNodes[1].childNodes[1].childNodes[0].innerText;
+        editDivLine1.value = object.childNodes[1].childNodes[1].childNodes[2].innerText;
+        editDivLine2.value = object.childNodes[1].childNodes[3].innerText;
+        saveButton.setAttribute("onclick", "saveChange()")
+        object.setAttribute("id", "changeObject");//为正在修改的object设置一个id以便保存
+    }
+
+    function deleteAddress(object) {
+        if (confirm("您确定要删除本条地址吗？\n\"" + object.childNodes[1].childNodes[3].innerText + "\"")) {
+            /* ajax */
+            if (1) {
+                alert("删除成功！");
+                object.parentNode.removeChild(object);
+            }
+        }
+    }
+
+    function saveChange() {
+        if (confirm("您确定要新建本地址吗？\n" + editDivLine0.value + "\n" + editDivLine1.value + "\n" + editDivLine2.value)) {
+
+            /* ajax */
+
+            if (1) {
+                alert("修改成功！");
+                editDiv.hidden = true;
+                var object = document.getElementById("changeObject");
+                object.childNodes[1].childNodes[1].childNodes[0].innerText = editDivLine0.value;
+                object.childNodes[1].childNodes[1].childNodes[2].innerText = editDivLine1.value;
+                object.childNodes[1].childNodes[3].innerText = editDivLine2.value;
+
+                object.removeAttribute("id");//取消id
+            }
+        }
+    }
+
+    function saveCreate() {
+        /* ajax */
+
+        if (confirm("您确定要新建本地址吗？\n" + editDivLine0.value + "\n" + editDivLine1.value + "\n" + editDivLine2.value)) {
+            if (1) {
+                alert("添加成功");
+                document.getElementById("addresslist").innerHTML +=
+                    "<div class=\"addressitem\">\n" +
+                    "        <div class=\"addresstop\">\n" +
+                    "            <div class=\"line1\"><span>" + editDivLine0.value + "</span> <span class=\"phonenum\">" + editDivLine1.value + "</span></div>\n" +
+                    "            <div class=\"line2\">" + editDivLine2.value + "</div>\n" +
+                    "        </div>\n" +
+                    "        <div class=\"addressbottom\">\n" +
+                    "            <div class=\"button\" onclick=\"editAddress(this.parentNode.parentNode)\">\n" +
+                    "                <img src=\"./IMG/personal_center/edit.png\">\n" +
+                    "                <span>编辑</span>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"button\" onclick=\"deleteAddress(this.parentNode.parentNode)\">\n" +
+                    "                <img src=\"./IMG/personal_center/delete.png\">\n" +
+                    "                <span>删除</span>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>";
+                editDiv.hidden = true;
+            }
+        }
+
+    }
+
+    function closeEdit() {
+        editDiv.hidden = true;
+    }
+
+</script>
+
+</body>
+</html>

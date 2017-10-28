@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta name="viewport"
+      content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>佐为照明</title>
+    <link rel="stylesheet" href="./CSS/fung.css">
+    <style type="text/css">
+
+        .chatlist {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .menu_line {
+            height: 4rem;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            padding: 0.5rem 0;
+        }
+
+        .menu_line img {
+            height: 4rem;
+            width: 4rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .img_n_number {
+            position: relative;
+        }
+
+        .corner_number {
+            margin-right: 0.5rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            background-color: red;
+            color: #fff;
+            height: 1rem;
+            line-height: 1rem;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            border-radius: 1rem;
+            position: absolute;
+            top: -.2rem;
+            right: -.2rem;
+        }
+
+        .detail_info {
+            flex-grow: 1;
+            line-height: 2rem;
+            color: dimgray;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .username {
+            color: #000;
+        }
+
+        .lastmessage {
+            font-size: 0.8rem;
+            height: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+        }
+
+        .lasttime {
+            color: gray;
+            font-size: 0.8rem;
+            float: right;
+            margin-right: 0.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navibar">
+    <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button">
+    <div class="topbarmiddle">消息</div>
+    <img src="./IMG/personal_center/client.png" style="float: right;" class="topbar_button">
+</div>
+
+<div class="placeholder" style="height: 2.5rem;"></div>
+<div class="chatlist" id="chatlist">
+
+    <div class="menu_line">
+        <div class="img_n_number">
+            <img src="./IMG/user/icon.jpg">
+            <span class="corner_number">2</span>
+        </div>
+        <div class="detail_info">
+            <div class="username">jackfung<span class="lasttime">15.01</span></div>
+            <div class="lastmessage">华南农业大学，又名：华南停水停电停网校园卡不能充值大学</div>
+        </div>
+    </div>
+    <div class="menu_line">
+        <div class="img_n_number">
+            <img src="./IMG/user/icon.jpg">
+            <span class="corner_number">2</span>
+        </div>
+        <div class="detail_info">
+            <div class="username">jackfung<span class="lasttime">15.01</span></div>
+            <div class="lastmessage">华南农业大学，又名：华南停水停电停网校园卡不能充值大学</div>
+        </div>
+    </div>
+    <div class="menu_line">
+        <div class="img_n_number">
+            <img src="./IMG/user/icon.jpg">
+            <span class="corner_number">2</span>
+        </div>
+        <div class="detail_info">
+            <div class="username">jackfung<span class="lasttime">15.01</span></div>
+            <div class="lastmessage">华南农业大学，又名：华南停水停电停网校园卡不能充值大学</div>
+        </div>
+    </div>
+    <div class="menu_line" style="height: 1.5rem;line-height: 1.5rem;display: block; text-align: center;">点击加载更多</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+
+
+</script>
+</body>
+</html>
