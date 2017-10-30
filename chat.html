@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <title>佐为照明</title>
     <link rel="stylesheet" href="./CSS/fung.css">
+    <script type="text/javascript" src="./JavaScript/vue.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <style type="text/css">
 
         .inputbox {
             width: 100%;
-            height:3rem;
+            height: 3rem;
             line-height: 3rem;
             position: fixed;
             bottom: 0;
@@ -35,7 +37,7 @@
             margin: 0.5rem;
         }
 
-        .inputbox input {
+        .inputbox textarea {
             vertical-align: middle;
             margin: 0.5rem 0;
             height: 2rem;
@@ -45,31 +47,381 @@
             border-radius: 0.5rem;
         }
 
+        .talkblock {
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .talktime {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: gray;
+        }
+
+        .talk_icon {
+            vertical-align: top;
+            margin: 0.5rem;
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+
+        .messagecontent {
+            vertical-align: top;
+            display: inline-block;
+            background-color: #fff;
+            border: 1px lightgray solid;
+            border-radius: 0.5rem;
+            width: auto;
+            height: auto;
+            max-width: 60%;
+            min-height: 2rem;
+            padding: 0.5rem;
+        }
+
+        .chatcontent:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .corner_left {
+            float: left;
+            background-color: #fff;
+            border-bottom: lightgray 1px solid;
+            border-left: lightgray 1px solid;
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            transform: rotate(45deg);
+            vertical-align: bottom;
+            position: relative;
+            top: 1.5rem;
+            left: 0.3rem;
+        }
+
+        .corner_right {
+            float: right;
+            background-color: #fff;
+            border-top: lightgray 1px solid;
+            border-right: lightgray 1px solid;
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            transform: rotate(45deg);
+            vertical-align: bottom;
+            position: relative;
+            top: 1.5rem;
+            right: 0.3rem;
+        }
+
+        .messagecontent img {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .voice_img {
+            width: 2rem !important;
+            height: 2rem !important;
+        }
+
+        .record_button {
+            vertical-align: middle;
+            margin: 0.5rem 0;
+            height: 2rem;
+            line-height: 2rem;
+            flex-grow: 1;
+            font-size: 1rem;
+            border: 1px lightgray solid;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-right: 0.5rem;
+            color: dimgray;
+        }
+
+        .voicenotice {
+            position: fixed;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 10rem;
+            height: 8rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="navibar">
     <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button">
-    <div class="topbarmiddle">这里是对方的名字</div>
+    <div class="topbarmiddle">一锅天使</div>
     <div style="float: right;" class="topbar_button"></div>
 </div>
 
 <div class="placeholder"></div>
-<div class="chatcontent">
+<div class="chatcontent" id="chat">
 
-    
+    <!--<div class="talkblock floatleft">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatleft">
+        <div class="corner_left"></div>
+        <div class="messagecontent floatleft">
+            您好，我是品豪照明。
+            您好，我是品豪照明。
+            您好，我是品豪照明。
+            您好，我是品豪照明。
+            您好，我是品豪照明。
+        </div>
+    </div>
+
+    <div class="talkblock floatright">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatright">
+        <div class="corner_right"></div>
+        <div class="messagecontent floatright">
+            您好，我是佐为照明。
+            您好，我是佐为照明。
+            您好，我是佐为照明。
+            您好，我是佐为照明。
+            您好，我是佐为照明。
+        </div>
+    </div>
+
+    <div class="talkblock floatright">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatright">
+        <div class="corner_right"></div>
+        <div class="messagecontent floatright">
+            <img src="./IMG/hot_sale/auxiliary_hot_sale.png" alt="图片" onclick="viewPicture(this.getAttribute('src'))">
+        </div>
+    </div>
+
+    <div class="talkblock floatleft">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatleft">
+        <div class="corner_left"></div>
+        <div class="messagecontent floatleft">
+            <img src="./IMG/play_list/img1.jpg" alt="图片" onclick="viewPicture(this.getAttribute('src'))">
+        </div>
+    </div>
+
+    <div class="talkblock floatright">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatright">
+        <div class="corner_right"></div>
+        <div class="messagecontent floatright">
+            <img class="voice_img" src="./IMG/personal_center/sound_from_right.png" asrc="我是asrc" alt="语音"
+                 onclick="playAudio(this.getAttribute('asrc'))">
+        </div>
+    </div>
+
+    <div class="talkblock floatleft">
+        <img src="./IMG/user/icon.jpg" class="talk_icon floatleft">
+        <div class="corner_left"></div>
+        <div class="messagecontent floatleft">
+            <img class="voice_img" src="./IMG/personal_center/sound_from_left.png" asrc="我是asrc" alt="语音"
+                 onclick="playAudio(this.getAttribute('asrc'))">
+        </div>
+    </div>-->
+
+    <div class="talkblock" v-for="item in chatContents" :class="{floatleft: !item.isYou, floatright: item.isYou}">
+
+        <div class="talktime">
+            {{getTime(item.time)}}
+        </div>
+
+        <img class="talk_icon" v-if="item.isYou" :src="thisImg"
+             :class="{floatleft: !item.isYou, floatright: item.isYou}">
+        <img class="talk_icon" v-if="!item.isYou" :src="thatImg"
+             :class="{floatleft: !item.isYou, floatright: item.isYou}">
+
+        <div :class="{corner_left: !item.isYou, corner_right: item.isYou}"></div>
+
+        <div class="messagecontent" :class="{floatleft: !item.isYou, floatright: item.isYou}" v-if="item.type == 0">
+            <!--如果是文字-->
+            {{item.content}}
+        </div>
+        <div class="messagecontent" :class="{floatleft: !item.isYou, floatright: item.isYou}" v-if="item.type == 1">
+            <!--如果是音频-->
+            <img class="voice_img" v-if="item.isYou" src="./IMG/personal_center/sound_from_right.png"
+                 :asrc="item.content" alt="语音"
+                 onclick="playAudio(this.getAttribute('asrc'))">
+            <img class="voice_img" v-if="!item.isYou" src="./IMG/personal_center/sound_from_left.png"
+                 :asrc="item.content" alt="语音"
+                 onclick="playAudio(this.getAttribute('asrc'))">
+        </div>
+        <div class="messagecontent" :class="{floatleft: !item.isYou, floatright: item.isYou}" v-if="item.type == 2">
+            <!--如果是图片-->
+            <img :src="item.content" alt="图片" onclick="viewPicture(this.getAttribute('src'))">
+        </div>
+
+    </div>
 
 </div>
+
 <div class="placeholder"></div>
+<div id="bottom"></div>
 
 <div class="inputbox">
-    <img class="inputleft_img" src="./IMG/personal_center/sound_button.png">
-    <input type="text">
-    <img class="inputright_img" src="./IMG/personal_center/send.png">
+    <img class="inputleft_img" src="./IMG/personal_center/sound_button.png" onclick="switchToVoice()">
+    <textarea type="text"></textarea>
+    <img class="inputright_img" src="./IMG/personal_center/picture.png" onclick="sendPicture()">
+    <img class="inputright_img" src="./IMG/personal_center/send.png" onclick="sendMessage()">
 </div>
 
-<script type="text/javascript"></script>
+<div id="record_bar" class="inputbox" style="display: none;">
+    <img class="inputleft_img" src="./IMG/personal_center/keyboard_button.png"
+         onclick="switchToType()">
+    <div class="record_button">长按此处录音</div>
+</div>
+
+<div class="voicenotice" id="voicenotice0" hidden>
+    <div style="height: 5rem;line-height: 5rem;">正在录音</div>
+    <div style="font-size: 1rem;">手指上划，取消发送</div>
+</div>
+
+<div class="voicenotice" id="voicenotice1" hidden>
+    <div style="height: 5rem;line-height: 5rem;">即将取消</div>
+    <div style="font-size: 1rem;">手指下滑，恢复发送</div>
+</div>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        window.location.href = "#bottom";
+    }
+
+    var recordBar = document.getElementById("record_bar");
+    var record_button = document.getElementsByClassName("record_button")[0];
+    var textInput = document.getElementsByTagName("textarea")[0];
+    var voiceNotice0 = document.getElementById("voicenotice0");
+    var voiceNotice1 = document.getElementById("voicenotice1");
+
+    var chat = new Vue({
+        el: "#chat",
+        data: {
+            thisImg: "./IMG/user/icon.jpg",
+            thatImg: "./IMG/user/thaticon.jpg",
+            chatContents: [
+                /*
+                * 每条内容对象的属性：
+                * isYou: true -> 是本人发的, false -> 是对方发的
+                * type: 0 -> words, 1 -> audio, 2 -> picture
+                * content: 内容或资源地址
+                * time: 距离1970年1月1日的时间
+                * */
+                {isYou: true, type: 0, content: "你好，我是Jack Fung! 很高兴认识你", time: 0},
+                {isYou: false, type: 0, content: "你好，我不是Jack Fung! 很高兴认识你", time: 1000000},
+                {isYou: true, type: 1, content: "我是音频1", time: 2000000},
+                {isYou: false, type: 1, content: "我是音频2", time: 3000000},
+                {isYou: true, type: 2, content: "./IMG/hot_sale/auxiliary_hot_sale.png", time: 3000000},
+                {isYou: false, type: 2, content: "./IMG/play_list/img1.jpg", time: 40000000}
+            ]
+        },
+        methods: {
+            getTime: function (time) {
+                var date = new Date(time);
+                return date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日 " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            }
+        }
+    });
+
+    function playAudio(src) {
+        /*使用微信接口播放音频*/
+        alert(src);
+    }
+
+    function viewPicture(src) {
+        /*使用微信接口全屏查看图片*/
+        alert(src);
+        wx.previewImage({
+            current: src, // 当前显示图片的http链接
+            urls: [src] // 需要预览的图片http链接列表
+        });
+    }
+
+    function sendPicture() {
+        /*选择图片发送*/
+        wx.chooseImage({
+            count: 9, // 默认9
+            sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+            }
+        });
+    }
+
+    function sendMessage() {
+        /*发送内容*/
+        if (textInput.value != "") {
+            chat.chatContents.push({isYou: true, type: 0, content: textInput.value, time: 10000000000});
+            textInput.value = "";
+            setTimeout(function () {
+                window.location.href = "#bottom";
+            }, 100);
+        }
+    }
+
+    function switchToVoice() {
+        recordBar.style.display = "flex";
+    }
+
+    function switchToType() {
+        recordBar.style.display = "none";
+    }
+
+    var beginY;
+
+    record_button.addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        /*此处开始录音*/
+
+        beginY = event.touches[0].clientY;
+
+        record_button.style.backgroundColor = "gray";
+        record_button.style.color = "white";
+        record_button.innerText = "正在录音";
+        voiceNotice0.hidden = false;
+    });
+
+    record_button.addEventListener("touchmove", function (event) {
+        if (beginY - event.touches[0].clientY > 100) {
+            voiceNotice0.hidden = true;
+            voiceNotice1.hidden = false;
+        } else {
+            voiceNotice0.hidden = false;
+            voiceNotice1.hidden = true;
+        }
+    });
+
+    record_button.addEventListener("touchend", function (event) {
+        /*此处停止录音*/
+
+        if (beginY - event.changedTouches[0].clientY > 100) {
+            console.log("取消录音");
+        } else {
+            console.log("发送录音");
+
+            /*此处发送录音*/
+
+        }
+
+        record_button.style.backgroundColor = "white";
+        record_button.style.color = "dimgray";
+        record_button.innerText = "长按此处录音";
+        voiceNotice0.hidden = true;
+        voiceNotice1.hidden = true
+    });
+
+
+</script>
 
 </body>
 </html>

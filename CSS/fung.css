@@ -87,6 +87,7 @@ table {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 
 .topbar_button {
@@ -101,4 +102,12 @@ table {
     color: #fff;
     display: inline-block;
     font-size: 1.2rem;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
 }
