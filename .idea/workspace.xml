@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5205e36b-e4f9-490f-999b-dbc3a3d2a7fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/cart_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/cart_orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/home_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/home_orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_orange.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5205e36b-e4f9-490f-999b-dbc3a3d2a7fc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -369,12 +361,12 @@
       <workItem from="1509774776292" duration="190000" />
       <workItem from="1509783027606" duration="817000" />
       <workItem from="1510017971483" duration="286000" />
-      <workItem from="1510111831523" duration="57000" />
+      <workItem from="1510111831523" duration="188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179114000" />
+    <option name="totallyTimeSpent" value="179245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="500" y="128" width="1440" height="900" extended-state="0" />
