@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5205e36b-e4f9-490f-999b-dbc3a3d2a7fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/personal_center/coupon_edge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IMG/personal_center/coupon_edge_gray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coupons.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/cart_black.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/cart_black.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/cart_orange.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/cart_orange.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/home_black.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/home_black.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/home_orange.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/home_orange.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_black.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_black.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_orange.png" afterPath="$PROJECT_DIR$/IMG/bottom_bar/personalcenter_orange.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coupons.html" afterPath="$PROJECT_DIR$/coupons.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -135,8 +126,8 @@
       <file leaf-file-name="coupons.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/coupons.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
+            <state relative-caret-position="852">
+              <caret line="170" column="16" lean-forward="false" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -356,12 +347,12 @@
       <workItem from="1510017971483" duration="286000" />
       <workItem from="1510111831523" duration="188000" />
       <workItem from="1510737815966" duration="320000" />
-      <workItem from="1511930164866" duration="5814000" />
+      <workItem from="1511930164866" duration="6060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185379000" />
+    <option name="totallyTimeSpent" value="185625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1278" height="1080" extended-state="6" />
@@ -1000,8 +991,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coupons.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
+        <state relative-caret-position="852">
+          <caret line="170" column="16" lean-forward="false" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />

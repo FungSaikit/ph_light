@@ -122,7 +122,7 @@
 
         <div class="coupon" v-for="item in coupons">
             <div class="coupon_left">
-                <div class="coupon_name" v-cloak>{{item.name}}</div>
+                <div class="coupon_name" v-cloak><span v-if="currentTab==1">(已使用)</span><span v-if="currentTab==2">(已过期)</span>{{item.name}}</div>
                 <div class="coupon_time" v-cloak>{{item.time}} 前可用</div>
             </div>
             <div v-if="currentTab==0" class="coupon_middle" v-cloak>¥ <span class="value">{{item.value}}</span></div>
