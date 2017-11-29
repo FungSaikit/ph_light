@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>佐为照明</title>
+    <link rel="stylesheet" href="./CSS/fung.css">
+    <style type="text/css">
+
+        [v-cloak] {
+            display: none;
+        }
+
+        #coupons_tabs {
+            width: 100%;
+            height: 2.5rem;
+            line-height: 2.4rem;
+            background-color: #fff;
+            position: fixed;
+            top: 2.5rem;
+            left: 0;
+            display: flex;
+            display: -webkit-flex;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .coupons_tab {
+            display: inline-block;
+            width: 30%;
+            flex-grow: 1;
+            -webkit-flex-grow: 1;
+            text-align: center;
+        }
+
+        .coupons_tab_selected {
+            color: #f38200;
+            border-bottom: 0.1rem solid #f38200;
+        }
+
+        .coupon {
+            width: 100%;
+            height: 7rem;
+            margin-top: 0.5rem;
+            display: flex;
+            display: -webkit-flex;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .coupon_left {
+            background-color: #fff;
+            height: 6rem;
+            padding: 0.5rem;
+            flex-grow: 1;
+            -webkit-flex-grow: 1;
+        }
+
+        .coupon_name {
+            height: 4rem;
+            line-height: 2rem;
+        }
+
+        .coupon_time {
+            color: gray;
+            font-size: 0.8rem;
+            height: 1rem;
+            line-height: 1rem;
+            margin-top: 1rem;
+        }
+
+        .coupon_middle {
+             background-color: #f38200;
+             color: #fff;
+             height: 100%;
+             width: 30%;
+             line-height: 7rem;
+             text-align: center;
+             white-space: nowrap;
+         }
+
+        .coupon_middle_gray {
+            background-color: #7d7d7d;
+            color: #fff;
+            height: 100%;
+            width: 30%;
+            line-height: 7rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .value {
+            font-size: 1.5rem;
+        }
+
+        .coupon_right {
+            height: 100%;
+            width: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navibar">
+    <img src="./IMG/top_bar/back_white.png" alt="" class="topbar_button">
+    <div class="topbarmiddle">优惠券</div>
+    <div style="float: right;" class="topbar_button"></div>
+</div>
+
+<div id="content">
+    <div id="coupons_tabs">
+
+        <div class="coupons_tab" :class="{coupons_tab_selected: currentTab==0}" tab="0" @click="changeTab">未使用</div>
+        <div class="coupons_tab" :class="{coupons_tab_selected: currentTab==1}" tab="1" @click="changeTab">已使用</div>
+        <div class="coupons_tab" :class="{coupons_tab_selected: currentTab==2}" tab="2" @click="changeTab">已过期</div>
+
+    </div>
+
+    <div style="height: 5rem;"></div>
+
+    <div id="coupons">
+
+        <div class="coupon" v-for="item in coupons">
+            <div class="coupon_left">
+                <div class="coupon_name" v-cloak>{{item.name}}</div>
+                <div class="coupon_time" v-cloak>{{item.time}} 前可用</div>
+            </div>
+            <div v-if="currentTab==0" class="coupon_middle" v-cloak>¥ <span class="value">{{item.value}}</span></div>
+            <div v-if="currentTab!=0" class="coupon_middle_gray" v-cloak>¥ <span class="value">{{item.value}}</span></div>
+            <img v-if="currentTab==0" class="coupon_right" src="IMG/personal_center/coupon_edge.png" v-cloak/>
+            <img v-if="currentTab!=0" class="coupon_right" src="IMG/personal_center/coupon_edge_gray.png" v-cloak/>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="JavaScript/vue.js"></script>
+
+<script type="text/javascript">
+
+    var coupons = new Vue({
+        el: '#content',
+        data: {
+            currentTab: 0,
+            coupons: [
+                {
+                    name: '满1000000减100000优惠券',
+                    time: '2017-11-30',
+                    value: '10000'
+                },
+                {
+                    name: '满1000000减100000优惠券',
+                    time: '2017-11-30',
+                    value: '10000'
+                },
+                {
+                    name: '满1000000减100000优惠券',
+                    time: '2017-11-30',
+                    value: '10000'
+                },
+                {
+                    name: '满1000000减100000优惠券',
+                    time: '2017-11-30',
+                    value: '10000'
+                }
+            ]
+        },
+        methods: {
+            changeTab: function (e) {
+                this.currentTab = e.target.getAttribute('tab');
+                this.coupons.splice(0, this.coupons.length);
+                /*在此处加载优惠券*/
+                this.coupons.push();
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
